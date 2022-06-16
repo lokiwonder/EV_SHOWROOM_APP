@@ -1,0 +1,517 @@
+{
+    "setting": {
+        "app_id": "",
+        "app_version": 0,
+        "app_type": "vehicles",
+        "nation": "it",
+        "languages": [
+            "en"
+        ],
+        "default_language": "en"
+    },
+    "translations": [
+        {
+            "language": "en",
+            "electrifies": [
+                {
+                    "electrified_item_name": "KONA Electric",
+                    "version": 1.01,
+                    "main_image": "3e07018f-8a5c-49ba-a37f-9f34e75b7f7d.png",
+                    "rotation_image": "~.png",
+                    "calculation_image": "~.png",
+                    "calculator": 10,
+                    "main": {
+                        "sequence_number": 0,
+                        "type": "template_3",
+                        "image": "02ce29b5-fe60-4cb5-ab58-d193051e464a.png"
+                    },
+                    "highlights": [
+                        {
+                            "sequence_number": 0,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "The beauty of electric innovation",
+                            "comment": "Breathtaking beautiful and amazingly advanced, the IONIQ 5 is refining the way people look at electic cars.",
+                            "image": "7b7df373-513e-40ce-b6e4-4534f9c8da82.png",
+                            "video": null
+                        },
+                        {
+                            "sequence_number": 1,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Exterior",
+                            "comment": "Distinctive. Iconic. Pure. Concept car design in series",
+                            "image": "54eefb95-fccb-4663-b349-da751fd8f8d6.png",
+                            "video": null
+                        },
+                        {
+                            "sequence_number": 2,
+                            "type": "template_2",
+                            "contents": [
+                                {
+                                    "translation_status": true,
+                                    "image": "c61361c1-009e-4e51-afbb-638a112379ba.png",
+                                    "comment": "From night to bright in 256 pixels"
+                                },
+                                {
+                                    "translation_status": true,
+                                    "image": "5bfc39c2-a401-40ea-a73a-352d8f2f9783.png",
+                                    "comment": "Bold and bright in the back"
+                                },
+                                {
+                                    "translation_status": true,
+                                    "image": "919c3575-9285-412c-bb1b-599f5d5fb4f1.png",
+                                    "comment": "Exclusive 20″ alloy wheels"
+                                }
+                            ]
+                        },
+                        {
+                            "sequence_number": 3,
+                            "type": "template_3",
+                            "image": "cd930395-8305-45af-9c5e-30a3d4154db1.png"
+                        },
+                        {
+                            "sequence_number": 4,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Interior",
+                            "comment": "Live, drive, work, relax.\nThe lines between living space\nand moving space are being blurred.",
+                            "image": "851fd07b-198b-45ed-9680-ef79540ca873.png",
+                            "video": null
+                        },
+                        {
+                            "sequence_number": 5,
+                            "type": "template_2",
+                            "contents": [
+                                {
+                                    "translation_status": true,
+                                    "image": "c39ace99-f40b-411e-b78b-9e25eb305681.png",
+                                    "comment": "Sliding centre console"
+                                },
+                                {
+                                    "translation_status": true,
+                                    "image": "9ae16a3f-f1ea-44f5-bbb5-bd9e1623c557.png",
+                                    "comment": "Vehicle-to-Load"
+                                },
+                                {
+                                    "translation_status": true,
+                                    "image": "4da89072-da05-492f-b95e-4ba77234f6f6.png",
+                                    "comment": "Wide-screen digital cockpit"
+                                }
+                            ]
+                        },
+                        {
+                            "sequence_number": 6,
+                            "type": "template_3",
+                            "image": "da98bd32-e742-4e90-8f42-772ed56e751e.png"
+                        },
+                        {
+                            "sequence_number": 7,
+                            "type": "template_3",
+                            "image": "2918eeba-e44f-4055-b45c-f6adee6b38a8.png"
+                        }
+                    ],
+                    "charging": [
+                        {
+                            "sequence_number": 0,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Charge at home",
+                            "comment": "Plug in your IONIQ Electric overnight,\nand wake up to a fully charged battery.",
+                            "image": "23841202-865c-4639-8db6-627e549e2c54.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 1,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Charge at work",
+                            "comment": "One less stop to worry about after work.\nA growing number of companies are offering\ncharging stations.",
+                            "image": "7dc1c57c-0a6b-4022-97c9-fee864c52f11.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 2,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Charge everywhere",
+                            "comment": "Hyundai’s Charging Station Finder shows you\nreal-time charging station information\nsuch as location connector types,\nand availability on the Bluelink® app on your phone and on your cars navigation display.",
+                            "image": "da0e5921-bbee-4cd8-9fad-03265babcebc.png",
+                            "video": "~.mp4"
+                        }
+                    ],
+                    "benefits": [
+                        {
+                            "sequence_number": 0,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Cost and CO₂ reduction",
+                            "comment": "IONIQ 5 is not only a zero emissions vehicle: often the cost of operation is lower compared to combustion counterparts, especially if you charge it at home.*",
+                            "image": "b3b59cdb-133f-47c9-a80e-f9929643ff56.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 1,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Ultra fast battery charging",
+                            "comment": "Charge up to 80% in 18 minutes.\nGain 100km range in 5 minutes.",
+                            "image": "69728ef1-3b52-4018-8d4e-7f2f71ead72c.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 2,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Driving range of up to 481 km",
+                            "comment": "With Hyundai’s cutting-edge smart tech,\nthe launch version of IONIQ 5 with all-wheel drive delivers a range up to 481 km*.",
+                            "image": "6c61f3aa-b212-45d9-9686-305ff050a7e5.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 3,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Less maintenance,\nLower cost",
+                            "comment": "While an internal combustion engine contains hundreds of moving parts,\nan electric motor only needs around\nhalf a dozen, significantly reducing\nthe probability of something breaking.\nThere is no need for oil changes, either. ",
+                            "image": "a47acb41-b290-4511-8d0e-f9ab4742ff5e.png",
+                            "video": "~.mp4"
+                        }
+                    ]
+                },
+                {
+                    "electrified_item_name": "IONIQ 5",
+                    "version": 1.01,
+                    "main_image": "c934730d-05ca-4b01-ad50-54730c50bd3f.png",
+                    "rotation_image": "~.png",
+                    "calculation_image": "~.png",
+                    "calculator": 10,
+                    "main": {
+                        "sequence_number": 0,
+                        "type": "template_3",
+                        "image": "02ce29b5-fe60-4cb5-ab58-d193051e464a.png"
+                    },
+                    "highlights": [
+                        {
+                            "sequence_number": 0,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "The beauty of electric innovation",
+                            "comment": "Breathtaking beautiful and amazingly advanced, the IONIQ 5 is refining the way people look at electic cars.",
+                            "image": "7b7df373-513e-40ce-b6e4-4534f9c8da82.png",
+                            "video": null
+                        },
+                        {
+                            "sequence_number": 1,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Exterior",
+                            "comment": "Distinctive. Iconic. Pure. Concept car design in series",
+                            "image": "54eefb95-fccb-4663-b349-da751fd8f8d6.png",
+                            "video": null
+                        },
+                        {
+                            "sequence_number": 2,
+                            "type": "template_2",
+                            "contents": [
+                                {
+                                    "translation_status": true,
+                                    "image": "c61361c1-009e-4e51-afbb-638a112379ba.png",
+                                    "comment": "From night to bright in 256 pixels"
+                                },
+                                {
+                                    "translation_status": true,
+                                    "image": "5bfc39c2-a401-40ea-a73a-352d8f2f9783.png",
+                                    "comment": "Bold and bright in the back"
+                                },
+                                {
+                                    "translation_status": true,
+                                    "image": "919c3575-9285-412c-bb1b-599f5d5fb4f1.png",
+                                    "comment": "Exclusive 20″ alloy wheels"
+                                }
+                            ]
+                        },
+                        {
+                            "sequence_number": 3,
+                            "type": "template_3",
+                            "image": "cd930395-8305-45af-9c5e-30a3d4154db1.png"
+                        },
+                        {
+                            "sequence_number": 4,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Interior",
+                            "comment": "Live, drive, work, relax.\nThe lines between living space\nand moving space are being blurred.",
+                            "image": "851fd07b-198b-45ed-9680-ef79540ca873.png",
+                            "video": null
+                        },
+                        {
+                            "sequence_number": 5,
+                            "type": "template_2",
+                            "contents": [
+                                {
+                                    "translation_status": true,
+                                    "image": "c39ace99-f40b-411e-b78b-9e25eb305681.png",
+                                    "comment": "Sliding centre console"
+                                },
+                                {
+                                    "translation_status": true,
+                                    "image": "9ae16a3f-f1ea-44f5-bbb5-bd9e1623c557.png",
+                                    "comment": "Vehicle-to-Load"
+                                },
+                                {
+                                    "translation_status": true,
+                                    "image": "4da89072-da05-492f-b95e-4ba77234f6f6.png",
+                                    "comment": "Wide-screen digital cockpit"
+                                }
+                            ]
+                        },
+                        {
+                            "sequence_number": 6,
+                            "type": "template_3",
+                            "image": "da98bd32-e742-4e90-8f42-772ed56e751e.png"
+                        },
+                        {
+                            "sequence_number": 7,
+                            "type": "template_3",
+                            "image": "2918eeba-e44f-4055-b45c-f6adee6b38a8.png"
+                        }
+                    ],
+                    "charging": [
+                        {
+                            "sequence_number": 0,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Charge at home",
+                            "comment": "Plug in your IONIQ Electric overnight,\nand wake up to a fully charged battery.",
+                            "image": "23841202-865c-4639-8db6-627e549e2c54.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 1,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Charge at work",
+                            "comment": "One less stop to worry about after work.\nA growing number of companies are offering\ncharging stations.",
+                            "image": "7dc1c57c-0a6b-4022-97c9-fee864c52f11.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 2,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Charge everywhere",
+                            "comment": "Hyundai’s Charging Station Finder shows you\nreal-time charging station information\nsuch as location connector types,\nand availability on the Bluelink® app on your phone and on your cars navigation display.",
+                            "image": "da0e5921-bbee-4cd8-9fad-03265babcebc.png",
+                            "video": "~.mp4"
+                        }
+                    ],
+                    "benefits": [
+                        {
+                            "sequence_number": 0,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Cost and CO₂ reduction",
+                            "comment": "IONIQ 5 is not only a zero emissions vehicle: often the cost of operation is lower compared to combustion counterparts, especially if you charge it at home.*",
+                            "image": "b3b59cdb-133f-47c9-a80e-f9929643ff56.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 1,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Ultra fast battery charging",
+                            "comment": "Charge up to 80% in 18 minutes.\nGain 100km range in 5 minutes.",
+                            "image": "69728ef1-3b52-4018-8d4e-7f2f71ead72c.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 2,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Driving range of up to 481 km",
+                            "comment": "With Hyundai’s cutting-edge smart tech,\nthe launch version of IONIQ 5 with all-wheel drive delivers a range up to 481 km*.",
+                            "image": "6c61f3aa-b212-45d9-9686-305ff050a7e5.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 3,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Less maintenance,\nLower cost",
+                            "comment": "While an internal combustion engine contains hundreds of moving parts,\nan electric motor only needs around\nhalf a dozen, significantly reducing\nthe probability of something breaking.\nThere is no need for oil changes, either. ",
+                            "image": "a47acb41-b290-4511-8d0e-f9ab4742ff5e.png",
+                            "video": "~.mp4"
+                        }
+                    ]
+                },
+                {
+                    "electrified_item_name": "IONIQ Electric",
+                    "version": 1.01,
+                    "main_image": "33fcfc38-c809-4b6b-a0dc-3413a2938b10.png",
+                    "rotation_image": "~.png",
+                    "calculation_image": "~.png",
+                    "calculator": 10,
+                    "main": {
+                        "sequence_number": 0,
+                        "type": "template_3",
+                        "image": "02ce29b5-fe60-4cb5-ab58-d193051e464a.png"
+                    },
+                    "highlights": [
+                        {
+                            "sequence_number": 0,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "The beauty of electronic innovation",
+                            "comment": "Breathtaking beautiful and amazingly advanced, the IONIQ 5 is refining the way people look at electic cars.",
+                            "image": "7b7df373-513e-40ce-b6e4-4534f9c8da82.png",
+                            "video": null
+                        },
+                        {
+                            "sequence_number": 1,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Exterior",
+                            "comment": "Distinctive. Iconic. Pure. Concept car design in series",
+                            "image": "54eefb95-fccb-4663-b349-da751fd8f8d6.png",
+                            "video": null
+                        },
+                        {
+                            "sequence_number": 2,
+                            "type": "template_2",
+                            "contents": [
+                                {
+                                    "translation_status": true,
+                                    "image": "c61361c1-009e-4e51-afbb-638a112379ba.png",
+                                    "comment": "From night to bright in 256 pixels"
+                                },
+                                {
+                                    "translation_status": true,
+                                    "image": "5bfc39c2-a401-40ea-a73a-352d8f2f9783.png",
+                                    "comment": "Bold and bright in the back"
+                                },
+                                {
+                                    "translation_status": true,
+                                    "image": "919c3575-9285-412c-bb1b-599f5d5fb4f1.png",
+                                    "comment": "Exclusive 20″ alloy wheels"
+                                }
+                            ]
+                        },
+                        {
+                            "sequence_number": 3,
+                            "type": "template_3",
+                            "image": "cd930395-8305-45af-9c5e-30a3d4154db1.png"
+                        },
+                        {
+                            "sequence_number": 4,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Interior",
+                            "comment": "Live, drive, work, relax.\nThe lines between living space\nand moving space are being blurred.",
+                            "image": "851fd07b-198b-45ed-9680-ef79540ca873.png",
+                            "video": null
+                        },
+                        {
+                            "sequence_number": 5,
+                            "type": "template_2",
+                            "contents": [
+                                {
+                                    "translation_status": true,
+                                    "image": "c39ace99-f40b-411e-b78b-9e25eb305681.png",
+                                    "comment": "Sliding centre console"
+                                },
+                                {
+                                    "translation_status": true,
+                                    "image": "9ae16a3f-f1ea-44f5-bbb5-bd9e1623c557.png",
+                                    "comment": "Vehicle-to-Load"
+                                },
+                                {
+                                    "translation_status": true,
+                                    "image": "4da89072-da05-492f-b95e-4ba77234f6f6.png",
+                                    "comment": "Wide-screen digital cockpit"
+                                }
+                            ]
+                        },
+                        {
+                            "sequence_number": 6,
+                            "type": "template_3",
+                            "image": "da98bd32-e742-4e90-8f42-772ed56e751e.png"
+                        },
+                        {
+                            "sequence_number": 7,
+                            "type": "template_3",
+                            "image": "2918eeba-e44f-4055-b45c-f6adee6b38a8.png"
+                        }
+                    ],
+                    "charging": [
+                        {
+                            "sequence_number": 0,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Charge at home",
+                            "comment": "Plug in your IONIQ Electric overnight,\nand wake up to a fully charged battery.",
+                            "image": "23841202-865c-4639-8db6-627e549e2c54.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 1,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Charge at work",
+                            "comment": "One less stop to worry about after work.\nA growing number of companies are offering\ncharging stations.",
+                            "image": "7dc1c57c-0a6b-4022-97c9-fee864c52f11.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 2,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Charge everywhere",
+                            "comment": "Hyundai’s Charging Station Finder shows you\nreal-time charging station information\nsuch as location connector types,\nand availability on the Bluelink® app on your phone and on your cars navigation display.",
+                            "image": "da0e5921-bbee-4cd8-9fad-03265babcebc.png",
+                            "video": "~.mp4"
+                        }
+                    ],
+                    "benefits": [
+                        {
+                            "sequence_number": 0,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Cost and CO₂ reduction",
+                            "comment": "IONIQ 5 is not only a zero emissions vehicle: often the cost of operation is lower compared to combustion counterparts, especially if you charge it at home.*",
+                            "image": "b3b59cdb-133f-47c9-a80e-f9929643ff56.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 1,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Ultra fast battery charging",
+                            "comment": "Charge up to 80% in 18 minutes.\nGain 100km range in 5 minutes.",
+                            "image": "69728ef1-3b52-4018-8d4e-7f2f71ead72c.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 2,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Driving range of up to 481 km",
+                            "comment": "With Hyundai’s cutting-edge smart tech,\nthe launch version of IONIQ 5 with all-wheel drive delivers a range up to 481 km*.",
+                            "image": "6c61f3aa-b212-45d9-9686-305ff050a7e5.png",
+                            "video": "~.mp4"
+                        },
+                        {
+                            "sequence_number": 3,
+                            "type": "template_1",
+                            "translation_status": true,
+                            "title": "Less maintenance,\nLower cost",
+                            "comment": "While an internal combustion engine contains hundreds of moving parts,\nan electric motor only needs around\nhalf a dozen, significantly reducing\nthe probability of something breaking.\nThere is no need for oil changes, either. ",
+                            "image": "a47acb41-b290-4511-8d0e-f9ab4742ff5e.png",
+                            "video": "~.mp4"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

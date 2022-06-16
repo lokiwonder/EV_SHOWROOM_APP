@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Hyundai Sans Head';
+  src: url('./HyundaiSansHead.woff');
+}
+
+.template-2-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 9.07vh;
+}
+
+.template-2-item {
+  display: inline-block;
+  margin: 0 0.41vw;
+}
+
+.template-2-img {
+  width: 28.34vw;
+  height: 70.37vh;
+}
+
+.template-2-comment {
+  padding-top: 2.87vh;
+  padding-right: 2.4vw;
+}

@@ -1,0 +1,35 @@
+.background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00aad2;
+}
+
+.vehicle-list {
+  position: absolute;
+  top: 19vh;
+  left: 14vw;
+}
+
+.list-title {
+  margin-bottom: 4.35vh;
+}
+
+.vehicle-list > li,
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+.list-item {
+  margin-top: 0px;
+  margin-bottom: 4.63vh;
+}
+
+.menu-close {
+  position: absolute;
+  bottom: 3.7vh;
+  right: 3.7vh;
+}

@@ -1,0 +1,233 @@
+@font-face {
+  font-family: 'Hyundai Sans Head Regular';
+  src: url('./assets/fonts/HyundaiSansHead-Regular.woff');
+}
+
+@font-face {
+  font-family: 'Hyundai Sans Head Medium';
+  src: url('./assets/fonts/HyundaiSansHead-Medium.woff');
+}
+
+.primary-blue {
+  color: #002c5f;
+}
+.black {
+  color: #000000;
+}
+.gray {
+  color: #dddddd;
+}
+.light-gray {
+  color: #eeeeee;
+}
+.white {
+  color: #ffffff;
+}
+.brown {
+  color: #a36b4f;
+}
+.light-sand {
+  color: #f6f3f2;
+}
+.active-blue {
+  color: #00aad2;
+}
+.skyblue {
+  color: #aacae6;
+}
+.active-red {
+  color: #e63312;
+}
+
+.bg-primary-blue {
+  background-color: #002c5f;
+}
+.bg-black {
+  background: #000000;
+}
+.bg-gray {
+  background: #dddddd;
+}
+.bg-light-gray {
+  background: #eeeeee;
+}
+.bg-white {
+  background: #ffffff;
+}
+.bg-brown {
+  background: #a36b4f;
+}
+.bg-light-sand {
+  background: #f6f3f2;
+}
+.bg-active-blue {
+  background: #00aad2;
+}
+.bg-skyblue {
+  background: #aacae6;
+}
+.bg-active-red {
+  background: #e63312;
+}
+
+h1 {
+  margin: 0px;
+  font-family: 'Hyundai Sans Head Medium';
+  font-weight: 500;
+  font-size: 9.26vh;
+  line-height: 11.44vh;
+}
+
+h2 {
+  margin: 0px;
+  font-family: 'Hyundai Sans Head Medium';
+  font-weight: 500;
+  font-size: 5.56vh;
+  line-height: 6.87vh;
+}
+
+h3 {
+  margin: 0px;
+  font-family: 'Hyundai Sans Head Medium';
+  font-weight: 500;
+  font-size: 4.17vh;
+  line-height: 5.15vh;
+}
+
+h4 {
+  margin: 0px;
+  font-family: 'Hyundai Sans Head Medium';
+  font-weight: 500;
+  font-size: 3.24vh;
+  line-height: 4.01vh;
+}
+
+h5 {
+  margin: 0px;
+  font-family: 'Hyundai Sans Head Medium';
+  font-weight: 500;
+  font-size: 2.78vh;
+  line-height: 3.43vh;
+}
+
+h6 {
+  margin: 0px;
+  font-family: 'Hyundai Sans Head Medium';
+  font-weight: 500;
+  font-size: 1.85vh;
+  line-height: 2.57vh;
+}
+
+.b1 {
+  margin: 0px;
+  font-family: 'Hyundai Sans Head Regular';
+  font-weight: 400;
+  font-size: 3.7vh;
+  line-height: 4.58vh;
+}
+
+.b2 {
+  margin: 0px;
+  font-family: 'Hyundai Sans Head Regular';
+  font-weight: 400;
+  font-size: 2.78vh;
+  line-height: 3.43vh;
+}
+
+.b3 {
+  margin: 0px;
+  font-family: 'Hyundai Sans Head Regular';
+  font-weight: 400;
+  font-size: 2.22vh;
+  line-height: 2.75vh;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  background: 0;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+progress {
+  width: 100vw;
+  height: 0.37vh;
+  position: absolute;
+  bottom: 7.87vh;
+  -webkit-appearance: none;
+}
+
+::-webkit-progress-bar {
+  background-color: #eeeeee;
+  height: 0.37vh;
+}
+
+::-webkit-progress-value {
+  background: #00aad2;
+  height: 0.37vh;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* display flex */
+.fx {
+  display: flex;
+}
+
+.bl {
+  display: block;
+}
+
+/* vertical & horizontal align with flex */
+.fx-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.fx-col {
+  flex-direction: column;
+}
+
+/* flex 1 */
+.fx-1 {
+  flex: 1;
+}
+
+/* Fit to device height */
+.vh-100 {
+  height: 100vh;
+}
+
+/* Fit to device width */
+.vw-100 {
+  width: 100vw;
+}
+
+.ta-center {
+  text-align: center;
+}
+
+/* Model name */
+.model-name {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  font-family: 'Hyundai Sans Head';
+  font-size: 45px;
+  font-weight: 400;
+}
+
+.model-img {
+  margin: 60px 0px 60px 0px;
+}
+
+.right-arrow {
+  width: 0.83vw;
+  height: 2.31vh;
+}

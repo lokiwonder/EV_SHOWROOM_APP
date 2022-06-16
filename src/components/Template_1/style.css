@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contents-container {
+    margin-top: 9.72vh;
+    margin-left: 2.86vw;
+    flex: 1;
+}
+
+.title {
+    max-width: 33.23vw;
+}
+
+.comment {
+    max-width: 33.23vw;
+    margin-top: 4.63vh;
+}
+
+.img-container {
+    flex: 1;
+    padding-top: 6.48vh;
+    padding-right: 2.34vw;
+    float: right;
+}
+
+.img {
+    width: 53.64vw;
+    height: 80.55vh;
+}

@@ -1,0 +1,41 @@
+.main-background {
+  background-color: '#F6F3F2';
+  background-image: url('../../assets/images/MainBackground.png');
+  background-position: 'cover';
+  background-size: 100vw 100vh;
+}
+
+.gesture-guide {
+  background-color: rgba(11, 11, 11, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.vehicle-main-img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.vehicle-main-img {
+  width: 95.31vw;
+  height: 92.12vh;
+}
+
+.next-slide {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 17.4vw;
+  height: 92.037vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.next-slide-content {
+  padding-top: 2.22vh;
+}
