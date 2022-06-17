@@ -17,7 +17,7 @@
                     "electrified_item_name": "KONA Electric",
                     "version": 1.01,
                     "main_image": "3e07018f-8a5c-49ba-a37f-9f34e75b7f7d.png",
-                    "rotation_image": "~.png",
+                    "rotation_image": "fc06d347-480a-4d37-a0fa-832d99aac82f.png",
                     "calculation_image": "~.png",
                     "calculator": 10,
                     "main": {
@@ -183,7 +183,7 @@
                     "electrified_item_name": "IONIQ 5",
                     "version": 1.01,
                     "main_image": "c934730d-05ca-4b01-ad50-54730c50bd3f.png",
-                    "rotation_image": "~.png",
+                    "rotation_image": "fc06d347-480a-4d37-a0fa-832d99aac82f.png",
                     "calculation_image": "~.png",
                     "calculator": 10,
                     "main": {

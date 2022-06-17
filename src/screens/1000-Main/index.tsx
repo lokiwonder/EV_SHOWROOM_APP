@@ -1,8 +1,8 @@
 import { MouseEvent, useState, useEffect } from 'react';
 
 import { MainNav, VehicleNav } from '@nav';
-import { Item, Template_1, Template_2, Template_3 } from '@components';
-import { useElectrifiedSelectStore, useElectrifiedPageStore, useElectrifiedStore, useGestureStore } from '@store';
+import { Item, Template_1, Template_2, Template_3, Popup_360, Popup_Calculator, Popup_Vedio } from '@components';
+import { useElectrifiedSelectStore, useElectrifiedPageStore, useElectrifiedStore, useGestureStore, usePopupStore } from '@store';
 import { RightArrowIcon, HandNextIcon, HandPreviousIcon } from '@img';
 
 import './style.css';
@@ -12,6 +12,7 @@ function main() {
   const { selected_electrified, getSelectedVehicleIndex } = useElectrifiedSelectStore();
   const { electrified_page, setMainPage, setChargingPage, setBenefitPage, increasePage, decreasePage } = useElectrifiedPageStore();
   const { gesture, gesture_check, getGesture, notGesture, checkGesture } = useGestureStore();
+  const {popup} = usePopupStore();
 
   const electrified_index = getSelectedVehicleIndex(selected_electrified, electrifies);
   const index_arg = { electrified_index, electrifies };
@@ -79,7 +80,12 @@ function main() {
   };
 
   useEffect(() => {
-    timeout = setTimeout(() => notGesture(), 10000);
+    if(!popup && electrified_page.page_class !== 'main' && electrified_page.page_class !== '')
+      timeout = setTimeout(() => {
+          notGesture()
+      }, 10000);
+    else 
+      getGesture();
   }, [gesture_check]);
 
   new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.image}`, import.meta.url).href;
@@ -92,6 +98,10 @@ function main() {
           <MainNav />
         </div>
       ) : (
+        <>
+        {popup === '360' && <Popup_360/>}
+        {popup === 'calculator' && <Popup_Calculator />}
+        {popup === 'vedio' && <Popup_Vedio />}
         <>
           {electrified_page.page_class === 'main' ? (
             <div className="vehicle-main-img-container">
@@ -122,7 +132,7 @@ function main() {
             </div>
           )}
           <VehicleNav />
-        </>
+        </></>
       )}
     </>
   );

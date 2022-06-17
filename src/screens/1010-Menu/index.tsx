@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { useElectrifiedMenuStore, useElectrifiedSelectStore, useElectrifiedPageStore, useElectrifiedStore } from '@store';
-import data from '@data';
+import { useElectrifiedMenuStore, useElectrifiedSelectStore, useElectrifiedPageStore, useElectrifiedStore, useGestureStore } from '@store';
 
 import './style.css';
 import { MenuCloseIcon } from '@img';
@@ -11,6 +10,7 @@ function Menu() {
   const { selectVehicle, getSelectedVehicleIndex } = useElectrifiedSelectStore();
   const { setMainPage } = useElectrifiedPageStore();
   const { electrifies } = useElectrifiedStore();
+  const { checkGesture, getGesture } = useGestureStore();
 
   const onSelectHandler = (electrified_name: string) => {
     const electrified_index = getSelectedVehicleIndex(electrified_name, electrifies);
@@ -20,8 +20,13 @@ function Menu() {
     };
     selectVehicle(electrified_name);
     setMainPage(arg);
-    setHide();
   };
+
+  const onCloseHandler = () => {
+    checkGesture();
+    getGesture();
+    setHide();
+  }
 
   return (
     <div hidden={hide} className="background">
@@ -36,7 +41,7 @@ function Menu() {
             </li>
           ))}
       </div>
-      <button className="menu-close" onClick={setHide}>
+      <button className="menu-close" onClick={onCloseHandler}>
         <img src={MenuCloseIcon} />
       </button>
     </div>

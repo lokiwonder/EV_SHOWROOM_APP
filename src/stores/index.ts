@@ -5,5 +5,6 @@ import useElectrifiedMenuStore from './electrified_menu.store';
 import useElectrifiedSelectStore from './electrified_select.store';
 import useElectrifiedPageStore from './electrified_page.store';
 import useGestureStore from './gesture.store';
+import usePopupStore from './popup.store';
 
-export { useSettingStore, useLangegeStore, useElectrifiedStore, useElectrifiedMenuStore, useElectrifiedSelectStore, useElectrifiedPageStore, useGestureStore };
+export { useSettingStore, useLangegeStore, useElectrifiedStore, useElectrifiedMenuStore, useElectrifiedSelectStore, useElectrifiedPageStore, useGestureStore, usePopupStore };

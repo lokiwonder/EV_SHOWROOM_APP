@@ -25,8 +25,8 @@ async function createWindow() {
     title: 'EV Showroom',
     width: 1920,
     height: 1080,
-    frame: false,
-    fullscreen: true,
+    // frame: false,
+    // fullscreen: true,
     webPreferences: {
       // preload: splash,
       nodeIntegration: true,
