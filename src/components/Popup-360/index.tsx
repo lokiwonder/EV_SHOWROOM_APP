@@ -19,19 +19,19 @@ function index() {
 
   const i = R.findIndex(R.propEq('electrified_item_name', selected_electrified))(electrifies);
   const electrified = electrifies[i];
-  const url = new URL(`/public/assets/images/${selected_electrified}/${electrified.rotation_image}`, import.meta.url).href
+  const url = new URL(`/public/assets/images/${selected_electrified}/${electrified.rotation_image}`, import.meta.url).href;
   return (
-    <div className="popup-bg">
-      <div className="popup-container">
+    <div className="popup-360-bg">
+      <div className="popup-360-container">
         <div>
-          <button className="popup-close-btn" onClick={onCloseHandler}>            
-          <img className="popup-close-img" src={PopupCloseIcon}/>
+          <button className="popup-360-close-btn" onClick={onCloseHandler}>            
+          <img className="popup-360-close-img" src={PopupCloseIcon}/>
           </button>
         </div>
-        <div className="popup-contents-container">
-          <button><img className="popup-contents-btn" src={PopupLeftArrowIcon} /></button>
-          <img className="popup-contents-img" src={url}></img>
-          <button><img className="popup-contents-btn" src={PopupRightArrowIcon} /></button>
+        <div className="popup-360-contents-container">
+          <button><img className="popup-360-contents-btn" src={PopupLeftArrowIcon} /></button>
+          <img className="popup-360-contents-img" src={url}></img>
+          <button><img className="popup-360-contents-btn" src={PopupRightArrowIcon} /></button>
         </div>
       </div>
     </div>

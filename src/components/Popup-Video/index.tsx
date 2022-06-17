@@ -5,7 +5,12 @@ import './style.css';
 import { PopupCloseIcon } from '@img';
 import { useElectrifiedSelectStore, useElectrifiedStore, usePopupStore, useGestureStore } from '@store';
 
-function index() {
+interface Props {
+  video: string;
+}
+
+function index(props: Props) {
+  const { video } = props;
   const { electrifies } = useElectrifiedStore();
   const { selected_electrified } = useElectrifiedSelectStore();
   const { checkGesture, getGesture } = useGestureStore();
@@ -28,7 +33,7 @@ function index() {
           </button>
         </div>
         <div className="popup-tmp-container">
-          <img className="popup-tmp-img" src={new URL(`/public/assets/images/${selected_electrified}/${electrified.rotation_image}`, import.meta.url).href} />
+          <img className="popup-tmp-img" src={video} />
         </div>
       </div>
     </div>

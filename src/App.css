@@ -26,6 +26,10 @@
 .brown {
   color: #a36b4f;
 }
+.sand {
+  color: #e4dcd3;
+}
+
 .light-sand {
   color: #f6f3f2;
 }
@@ -56,6 +60,9 @@
 }
 .bg-brown {
   background: #a36b4f;
+}
+.bg-sand {
+  background-color: #e4dcd3;
 }
 .bg-light-sand {
   background: #f6f3f2;
@@ -140,6 +147,22 @@ h6 {
   font-weight: 400;
   font-size: 2.22vh;
   line-height: 2.75vh;
+}
+
+.b4 {
+  margin: 0px;
+  font-family: 'Hyundai Sans Head Regular';
+  font-weight: 400;
+  font-size: 1.11vh;
+  line-height: 1.37vh;
+}
+
+.b5 {
+  margin: 0px;
+  font-family: 'Hyundai Sans Head Regular';
+  font-weight: 400;
+  font-size: 0.926vh;
+  line-height: 1.14vh;
 }
 
 button {

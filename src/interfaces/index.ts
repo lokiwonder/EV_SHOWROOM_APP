@@ -29,6 +29,7 @@ export interface Translation {
 
 export interface Electrified {
   electrified_item_name: string;
+  electrified_subtitle: string;
   version: number;
   main_image: string;
   rotation_image: string;
@@ -46,8 +47,10 @@ export interface Template_1 {
   translation_status: boolean;
   title: string;
   comment: string;
+  descripstion: string;
   image: string;
   video: string | null;
+  video_image: string;
 }
 
 export interface Template_2 {
@@ -60,6 +63,7 @@ export interface Template_2_item {
   translation_status: boolean;
   image: string;
   comment: string;
+  descripstion: string;
 }
 
 export interface Template_3 {

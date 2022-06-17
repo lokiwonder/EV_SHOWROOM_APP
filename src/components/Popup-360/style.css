@@ -1,4 +1,4 @@
-.popup-bg {
+.popup-360-bg {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -9,7 +9,7 @@
     z-index:1;
 }
 
-.popup-container {
+.popup-360-container {
     position: relative;
     margin: 4.17vh;
     flex: 1;
@@ -18,12 +18,12 @@
     background-size: 100%;
 }
 
-.popup-close-img {
+.popup-360-close-img {
     width: 3.63vh;
     height: 3.63vh;
 }
 
-.popup-close-btn {
+.popup-360-close-btn {
     position: relative;
     float: right;
     top: 2.315vh;
@@ -31,7 +31,7 @@
     z-index: 1;
 }
 
-.popup-contents-container {
+.popup-360-contents-container {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -39,12 +39,12 @@
     justify-content: space-between;
 }
 
-.popup-contents-img {
+.popup-360-contents-img {
     width: 80.99vw;
     height: 83.85vh;
 }
 
-.popup-contents-btn {
+.popup-360-contents-btn {
     width: 1.5625vw;
     height: 5.56vh;
     margin: 0 2.08vw;

@@ -19,6 +19,12 @@
   justify-content: center;
 }
 
+.main-text-container {
+  position: absolute;
+  top: 7.407vh;
+  left: 6.51vw;
+}
+
 .vehicle-main-img {
   width: 95.31vw;
   height: 92.12vh;

@@ -7,12 +7,14 @@ import { RightArrowIcon, HandNextIcon, HandPreviousIcon } from '@img';
 
 import './style.css';
 
+import * as R from 'ramda';
+
 function main() {
   const { electrifies } = useElectrifiedStore();
   const { selected_electrified, getSelectedVehicleIndex } = useElectrifiedSelectStore();
   const { electrified_page, setMainPage, setChargingPage, setBenefitPage, increasePage, decreasePage } = useElectrifiedPageStore();
   const { gesture, gesture_check, getGesture, notGesture, checkGesture } = useGestureStore();
-  const {popup} = usePopupStore();
+  const { popup } = usePopupStore();
 
   const electrified_index = getSelectedVehicleIndex(selected_electrified, electrifies);
   const index_arg = { electrified_index, electrifies };
@@ -27,7 +29,7 @@ function main() {
     clearTimeout(timeout);
     getGesture();
     checkGesture();
-  }
+  };
 
   // description: 화면을 눌렀을 때 (때지 않음)
   const touchStart = (e: MouseEvent<HTMLDivElement>) => {
@@ -80,16 +82,16 @@ function main() {
   };
 
   useEffect(() => {
-    if(!popup && electrified_page.page_class !== 'main' && electrified_page.page_class !== '')
+    if (!popup && electrified_page.page_class !== 'main' && electrified_page.page_class !== '')
       timeout = setTimeout(() => {
-          notGesture()
+        notGesture();
       }, 10000);
-    else 
-      getGesture();
+    else getGesture();
   }, [gesture_check]);
 
   new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.image}`, import.meta.url).href;
-
+  const i = R.findIndex(R.propEq('electrified_item_name', selected_electrified))(electrifies);
+  const electrified = electrifies[i];
   return (
     <>
       {!selected_electrified ? (
@@ -99,40 +101,44 @@ function main() {
         </div>
       ) : (
         <>
-        {popup === '360' && <Popup_360/>}
-        {popup === 'calculator' && <Popup_Calculator />}
-        {popup === 'vedio' && <Popup_Vedio />}
-        <>
-          {electrified_page.page_class === 'main' ? (
-            <div className="vehicle-main-img-container">
-              <img className="vehicle-main-img" src={new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.image}`, import.meta.url).href} />
-            </div>
-          ) : (
-            <div onMouseDown={touchStart} onMouseUp={touchEnd} onClick={onActionHandler}>
-              {!next && (
-                <div className="next-slide bg-primary-blue">
-                  <div>
-                    <h3 className="white">
-                      Next&nbsp;
-                      <img className="right-arrow" src={RightArrowIcon} />
-                    </h3>
-                    <p className="b2 white next-slide-content">Full Electric</p>
+          {popup === '360' && <Popup_360 />}
+          {popup === 'calculator' && <Popup_Calculator />}
+          <>
+            {electrified_page.page_class === 'main' ? (
+              <div className="vehicle-main-img-container">
+                <div className="main-text-container">
+                  <h1>{selected_electrified}</h1>
+                  <p className="b2">{electrified.electrified_subtitle}</p>
+                </div>
+                <img className="vehicle-main-img" src={new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.image}`, import.meta.url).href} />
+              </div>
+            ) : (
+              <div onMouseDown={touchStart} onMouseUp={touchEnd} onClick={onActionHandler}>
+                {!next && (
+                  <div className="next-slide bg-primary-blue">
+                    <div>
+                      <h3 className="white">
+                        Next&nbsp;
+                        <img className="right-arrow" src={RightArrowIcon} />
+                      </h3>
+                      <p className="b2 white next-slide-content">Full Electric</p>
+                    </div>
                   </div>
-                </div>
-              )}
-              {!gesture && (
-                <div className="gesture-guide">
-                  <img src={HandPreviousIcon} />
-                  <img src={HandNextIcon} />
-                </div>
-              )}
-              {electrified_page.page.type === 'template_1' && <Template_1 />}
-              {electrified_page.page.type === 'template_2' && <Template_2 />}
-              {electrified_page.page.type === 'template_3' && <Template_3 />}
-            </div>
-          )}
-          <VehicleNav />
-        </></>
+                )}
+                {!gesture && (
+                  <div className="gesture-guide">
+                    <img src={HandPreviousIcon} />
+                    <img src={HandNextIcon} />
+                  </div>
+                )}
+                {electrified_page.page.type === 'template_1' && <Template_1 />}
+                {electrified_page.page.type === 'template_2' && <Template_2 />}
+                {electrified_page.page.type === 'template_3' && <Template_3 />}
+              </div>
+            )}
+            <VehicleNav />
+          </>
+        </>
       )}
     </>
   );

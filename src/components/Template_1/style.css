@@ -7,6 +7,9 @@
     margin-top: 9.72vh;
     margin-left: 2.86vw;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .title {
@@ -15,7 +18,40 @@
 
 .comment {
     max-width: 33.23vw;
-    margin-top: 4.63vh;
+    padding-top: 4.63vh;
+    padding-bottom: 2.78vh;
+}
+
+.description {
+    max-width: 33.23vw;
+    color: #CCCCCC;
+}
+
+.page-lenght {
+    font-family: 'Hyundai Sans Head Medium';
+  font-weight: 500;
+  font-size: 3.24vh;
+  line-height: 4.01vh;
+}
+
+.contents-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.page_number {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.video_img {
+    width: 11.82vw;
+    height: 12.74vh;
+}
+
+.vedio_img_container {
+    margin-right: 2.03vw;
 }
 
 .img-container {
@@ -23,9 +59,11 @@
     padding-top: 6.48vh;
     padding-right: 2.34vw;
     float: right;
+    display: flex;
+    justify-content: center;
 }
 
 .img {
-    width: 53.64vw;
+    width: 95.37vh;
     height: 80.55vh;
 }
