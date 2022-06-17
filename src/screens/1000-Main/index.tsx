@@ -11,20 +11,26 @@ function main() {
   const { electrifies } = useElectrifiedStore();
   const { selected_electrified, getSelectedVehicleIndex } = useElectrifiedSelectStore();
   const { electrified_page, setMainPage, setChargingPage, setBenefitPage, increasePage, decreasePage } = useElectrifiedPageStore();
-  const { gesture, getGesture, notGesture } = useGestureStore();
+  const { gesture, gesture_check, getGesture, notGesture, checkGesture } = useGestureStore();
 
   const electrified_index = getSelectedVehicleIndex(selected_electrified, electrifies);
   const index_arg = { electrified_index, electrifies };
 
   const [next, setNext] = useState<boolean>(true);
 
+  let timeout: NodeJS.Timeout;
+
   let mouseX = 0;
+
+  const onActionHandler = () => {
+    clearTimeout(timeout);
+    getGesture();
+    checkGesture();
+  }
 
   // description: 화면을 눌렀을 때 (때지 않음)
   const touchStart = (e: MouseEvent<HTMLDivElement>) => {
     mouseX = e.clientX;
-    getGesture();
-    clearTimeout();
   };
 
   // todo: 훅으로 전환
@@ -67,11 +73,14 @@ function main() {
         if (electrified_page.page_present > 0) decreasePage(index_arg);
       }
     }
+    clearTimeout(timeout);
+    getGesture();
+    checkGesture();
   };
 
   useEffect(() => {
-    if (gesture) setTimeout(() => notGesture(), 10000);
-  }, [gesture]);
+    timeout = setTimeout(() => notGesture(), 10000);
+  }, [gesture_check]);
 
   new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.image}`, import.meta.url).href;
 
@@ -89,7 +98,7 @@ function main() {
               <img className="vehicle-main-img" src={new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.image}`, import.meta.url).href} />
             </div>
           ) : (
-            <div onMouseDown={touchStart} onMouseUp={touchEnd}>
+            <div onMouseDown={touchStart} onMouseUp={touchEnd} onClick={onActionHandler}>
               {!next && (
                 <div className="next-slide bg-primary-blue">
                   <div>
