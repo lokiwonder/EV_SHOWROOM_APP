@@ -1,33 +1,43 @@
 import create from 'zustand';
 
-import { Electrified } from '@interface';
-import * as R from 'ramda';
-
 //        interface        //
 interface GestureState {
   gesture: boolean;
-  gesture_check: boolean;
-  getGesture: () => void;
-  notGesture: () => void;
-  checkGesture: () => void;
+  change: boolean;
+  checkGesture: (type: string) => void;
+  setChange: () => void;
+  noChange: () => void;
 }
 //        interface        //
 
+let timeout: NodeJS.Timeout;
+
 const useStore = create<GestureState>((set) => ({
   gesture: true,
-  gesture_check: true,
-  getGesture: () =>
-    set((state) => ({
-      gesture: true,
-    })),
-  notGesture: () =>
-    set((state) => ({
-      gesture: false,
-    })),
-  checkGesture: () => 
-    set((state) => ({
-      gesture_check: !state.gesture_check
-    }))
+  change: true,
+  checkGesture: (class_name: string) => {
+    if (class_name !== '' && class_name !== 'main') {
+      set((state) => ({
+        gesture: true,
+      }));
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        set((state) => ({
+          change: false,
+          gesture: false,
+        }))
+      }, 10000);
+    }
+  },
+  setChange: () =>
+  set((state) => ({
+     change: true,
+   })),
+ noChange: () =>
+   set((state) => ({
+     change: false,
+   })), 
+
 }));
 
 export default useStore;

@@ -1,11 +1,11 @@
 .logo {
   width: 10.26vw;
-  height: 2.5vh;
+  height: 1.40625vw;
 }
 
 .nav {
   width: 100vw;
-  height: 7.87vh;
+  height: 4.427vw;
   margin: 0 auto;
   position: absolute;
   background-color: #ffffff;
@@ -32,6 +32,6 @@
 
 .nav-img-btn {
   /* 3.7 */
-  width: 3.7vh;
-  height: 3.7vh;
+  width: 1.5625vw;
+  height: 1.5625vw;
 }

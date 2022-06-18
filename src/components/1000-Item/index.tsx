@@ -1,47 +1,50 @@
 import * as R from 'ramda';
 
-import {useElectrifiedSelectStore, useElectrifiedPageStore, useElectrifiedStore} from '@store'
+import { useElectrifiedStore } from '@store';
 
 import { MainButtonIcon } from '@img';
-import './style.css'
+import './style.css';
+import { useEffect, useState } from 'react';
 
+//
 interface Props {
   electrified_name: string;
+  delay: number;
+  onSelectHandler: (electrified_name: string, i: number) => void;
 }
 
 function main_item(props: Props) {
-  
-  //        variables        
+  //        variables
   const { electrifies } = useElectrifiedStore();
-  const { selectVehicle } = useElectrifiedSelectStore();
-  const { setMainPage } = useElectrifiedPageStore();
-  const { electrified_name } = props;
+  const { electrified_name, delay, onSelectHandler } = props;
+  const [ animation, setAnimation ] = useState<string>('hidden-fx');
 
   const i = R.findIndex(R.propEq('electrified_item_name', electrified_name))(electrifies);
   const electrified = electrifies[i];
 
-  const url = new URL(`/public/assets/images/${electrified_name}/${electrified.main_image}`, import.meta.url).href
-  //        variables        
+  const url = new URL(`/public/assets/images/${electrified_name}/${electrified.main_image}`, import.meta.url).href;
+  //        variables
 
-  //        function        
-  const onSelectHandler = (vehicle_name: string) => {
-    selectVehicle(vehicle_name);
-    setMainPage({electrified_index: i, electrifies});
-  }
-  //        function        
+  // description: 에니메이션 지연
+  useEffect(() => {
+    setTimeout(() => {setAnimation('item')}, 400 * delay)
+  }, []);
 
   return (
-    <div className="item">
+    <div className={animation}>
       <div className="item-contents">
         <h3>{electrified.electrified_item_name}</h3>
-        <img className="vehicle-img" src={url}/>
+        <div className="electrified-image-container">
+          <img className="vehicle-img" src={url} />
+        </div>
         <div>
-          <button onClick={() => onSelectHandler(electrified_name)}>
+          <button onClick={() => onSelectHandler(electrified_name, i)}>
             <img className="main-button-img" src={MainButtonIcon} />
           </button>
         </div>
       </div>
     </div>
+    
   );
 }
 

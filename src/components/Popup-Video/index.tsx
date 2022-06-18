@@ -1,9 +1,7 @@
-import * as R from 'ramda';
-
 import './style.css';
 
 import { PopupCloseIcon } from '@img';
-import { useElectrifiedSelectStore, useElectrifiedStore, usePopupStore, useGestureStore } from '@store';
+import { usePopupStore, useGestureStore, useElectrifiedPageStore } from '@store';
 
 interface Props {
   video: string;
@@ -11,24 +9,20 @@ interface Props {
 
 function index(props: Props) {
   const { video } = props;
-  const { electrifies } = useElectrifiedStore();
-  const { selected_electrified } = useElectrifiedSelectStore();
-  const { checkGesture, getGesture } = useGestureStore();
+  const { electrified_page } = useElectrifiedPageStore();
+  const { checkGesture } = useGestureStore();
   const { closePopup } = usePopupStore();
 
   const onCloseHandler = () => {
-    getGesture();
-    checkGesture();
+    checkGesture(electrified_page.page_class);
     closePopup();
   } 
 
-  const i = R.findIndex(R.propEq('electrified_item_name', selected_electrified))(electrifies);
-  const electrified = electrifies[i];
   return (
     <div className="popup-bg">
       <div className="popup-container bg-light-sand">
         <div>
-          <button className="popup-close-btn" onClick={closePopup}>
+          <button className="popup-close-btn" onClick={onCloseHandler}>
             <img className="popup-close-img" src={PopupCloseIcon}></img>
           </button>
         </div>

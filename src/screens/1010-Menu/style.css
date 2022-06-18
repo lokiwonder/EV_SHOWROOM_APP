@@ -1,10 +1,16 @@
-.background {
+.menu-background-start {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100vw;
   height: 100vh;
   background-color: #00aad2;
+
+  animation: menu-background-open 0.6s;
+}
+
+.menu-open-animation {
+  animation: menu-open 0.6s 0.3s;
 }
 
 .vehicle-list {

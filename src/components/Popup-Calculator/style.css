@@ -7,6 +7,7 @@
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     z-index:1;
+    animation: common_popup 0.6s;
 }
 
 .popup-calculator-container {
@@ -44,10 +45,10 @@
 
 .popup-calculator-contents-dats-calc {
     margin: 0px;
-  font-family: 'Hyundai Sans Head Medium';
-  font-weight: 500;
-  font-size: 5.56vh;
-  line-height: 6.87vh;
+    font-family: 'Hyundai Sans Head Medium';
+    font-weight: 500;
+    font-size: 5.56vh;
+    line-height: 6.87vh;
 }
 
 .popup-calculator-contents-img {

@@ -8,9 +8,9 @@ import { MenuCloseIcon } from '@img';
 function Menu() {
   const { hide, setHide } = useElectrifiedMenuStore();
   const { selectVehicle, getSelectedVehicleIndex } = useElectrifiedSelectStore();
-  const { setMainPage } = useElectrifiedPageStore();
+  const { electrified_page, setMainPage } = useElectrifiedPageStore();
   const { electrifies } = useElectrifiedStore();
-  const { checkGesture, getGesture } = useGestureStore();
+  const { checkGesture } = useGestureStore();
 
   const onSelectHandler = (electrified_name: string) => {
     const electrified_index = getSelectedVehicleIndex(electrified_name, electrifies);
@@ -20,30 +20,32 @@ function Menu() {
     };
     selectVehicle(electrified_name);
     setMainPage(arg);
+    setHide();
   };
 
   const onCloseHandler = () => {
-    checkGesture();
-    getGesture();
+    checkGesture(electrified_page.page_class);
     setHide();
   }
 
   return (
-    <div hidden={hide} className="background">
-      <div className="vehicle-list">
-        <h6 className="list-title white">electrified</h6>
-        {electrifies &&
-          electrifies.map((electrified) => (
-            <li key={electrified.electrified_item_name}>
-              <Link onClick={() => onSelectHandler(electrified.electrified_item_name)} to={'/vehicles'}>
-                <h3 className="list-item white">{electrified.electrified_item_name}</h3>
-              </Link>
-            </li>
-          ))}
+    <div hidden={hide} className="menu-background-start">
+      <div className="menu-open-animation">
+        <div className="vehicle-list">
+          <h6 className="list-title white">electrified</h6>
+          {electrifies &&
+            electrifies.map((electrified) => (
+              <li key={electrified.electrified_item_name}>
+                <Link onClick={() => onSelectHandler(electrified.electrified_item_name)} to={'/vehicles'}>
+                  <h3 className="list-item white">{electrified.electrified_item_name}</h3>
+                </Link>
+              </li>
+            ))}
+        </div>
+        <button className="menu-close" onClick={onCloseHandler}>
+          <img src={MenuCloseIcon} />
+        </button>
       </div>
-      <button className="menu-close" onClick={onCloseHandler}>
-        <img src={MenuCloseIcon} />
-      </button>
     </div>
   );
 }

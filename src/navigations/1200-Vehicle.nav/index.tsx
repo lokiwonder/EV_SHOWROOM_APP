@@ -3,15 +3,26 @@ import { VehicleMenuView } from '@screen';
 
 import './style.css';
 import { RotationIcon, BarIcon, CalculatorIcon, HomeIcon, MenuIcon } from '@img';
+import { useEffect, useState } from 'react';
 
-function main_nav() {
+interface Props {
+  setNext: (next: boolean) => void;
+}
+
+function main_nav(prop: Props) {
   const { electrifies } = useElectrifiedStore();
   const { selected_electrified, getSelectedVehicleIndex, resetSelectVehicle } = useElectrifiedSelectStore();
   const { electrified_page, setMainPage } = useElectrifiedPageStore();
   const { setHighlightPage, setChargingPage, setBenefitPage, resetElectrifiedPage } = useElectrifiedPageStore();
   const { setShow } = useElectrifiedMenuStore();
-  const { checkGesture, getGesture } = useGestureStore();
+  const { checkGesture } = useGestureStore();
   const { openPopup } = usePopupStore();
+  const [ nav_animation, setNavAnimation ] = useState<string>('nav-animation');
+  const [ highlight_animation, setHighlightAnimation] = useState<string>('nav-center-item-hidden');
+  const [ charging_animation, setChargingAnimation] = useState<string>('nav-center-item-hidden');
+  const [ benefits_animation, setBenefitsAnimation] = useState<string>('nav-center-item-hidden');
+
+  const {setNext} = prop;
 
   const electrified_index = getSelectedVehicleIndex(selected_electrified, electrifies);
   const index_arg = { electrified_index, electrifies };
@@ -19,48 +30,69 @@ function main_nav() {
   const onHomeHandler = () => {
     resetSelectVehicle();
     resetElectrifiedPage();
+    setNext(true);
   };
 
   const onHighlightsHandler = () => {
-    checkGesture();
-    getGesture();
+    checkGesture(electrified_page.page_class);
     setHighlightPage(index_arg);
+    setNext(true);
   }
 
   const onChargingHandler = () => {
-    checkGesture();
-    getGesture();
+    checkGesture(electrified_page.page_class);
     setChargingPage(index_arg);
+    setNext(true);
   }
 
   const onBenefitsHandler = () => {
-    checkGesture();
-    getGesture();
+    checkGesture(electrified_page.page_class);
     setBenefitPage(index_arg);
+    setNext(true);
   }
 
   const on360Handler = () => {
-    checkGesture();
-    getGesture();
+    checkGesture(electrified_page.page_class);
     openPopup('360');
+    setNext(true);
   }
 
   const onCalculationsHandler = () => {
-    checkGesture();
-    getGesture();
+    checkGesture(electrified_page.page_class);
     openPopup('calculator');
+    setNext(true);
   }
 
   const onElectrifiedMenuHandler = () => {
-    checkGesture();
-    getGesture();
+    checkGesture(electrified_page.page_class);
     setShow();
+    setNext(true);
   }
+
+  useEffect(() => {
+    if(electrified_page.page_class === 'main') {
+      setTimeout(() => {
+        setHighlightAnimation('highlights');
+      }, 1500);
+      setTimeout(() => {
+        setChargingAnimation('charging');
+      }, 1700);
+      setTimeout(() => {
+        setBenefitsAnimation('benefits');
+      }, 1900);
+    }
+    else {
+      setNavAnimation('nav')
+      setHighlightAnimation('nav-center-item');
+      setChargingAnimation('nav-center-item');
+      setBenefitsAnimation('nav-center-item');
+    }
+  }, [])
 
   return (
     <>
       {electrified_page.page_class !== '' && electrified_page.page_class !== 'main' && <progress value={electrified_page.page_present + 1} max={electrified_page.page_length}></progress>}
-      <nav className="nav">
+      <nav className={nav_animation}>
         <div className="nav-left">
           <button onClick={() => onHomeHandler()}>
             <img className="nav-img" src={HomeIcon} />
@@ -72,13 +104,13 @@ function main_nav() {
         </div>
         <div className="nav-center">
           <div>
-            <button className={'nav-center-item'} onClick={onHighlightsHandler}>
+            <button className={highlight_animation} onClick={onHighlightsHandler}>
               <h6 className={electrified_page.page_class === 'main' ? '' : electrified_page.page_class === 'highlights' ? 'active' : 'passive'}>Highlights</h6>
             </button>
-            <button className={'nav-center-item'} onClick={onChargingHandler}>
+            <button className={charging_animation} onClick={onChargingHandler}>
               <h6 className={electrified_page.page_class === 'main' ? '' : electrified_page.page_class === 'charging' ? 'active' : 'passive'}>Charging</h6>
             </button>
-            <button className={'nav-center-item'} onClick={onBenefitsHandler}>
+            <button className={benefits_animation} onClick={onBenefitsHandler}>
               <h6 className={electrified_page.page_class === 'main' ? '' : electrified_page.page_class === 'benefits' ? 'active' : 'passive'}>Benefits</h6>
             </button>
           </div>

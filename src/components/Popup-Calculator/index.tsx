@@ -3,12 +3,13 @@ import * as R from 'ramda';
 import './style.css';
 
 import { PopupCloseIcon } from '@img';
-import { useElectrifiedSelectStore, useElectrifiedStore, usePopupStore, useGestureStore } from '@store';
+import { useElectrifiedSelectStore, useElectrifiedStore, usePopupStore, useGestureStore, useElectrifiedPageStore } from '@store';
 
 function index() {
   const { electrifies } = useElectrifiedStore();
   const { selected_electrified } = useElectrifiedSelectStore();
-  const { checkGesture, getGesture } = useGestureStore();
+  const { electrified_page } = useElectrifiedPageStore();
+  const { checkGesture } = useGestureStore();
   const { closePopup } = usePopupStore();
 
   const i = R.findIndex(R.propEq('electrified_item_name', selected_electrified))(electrifies);
@@ -16,8 +17,7 @@ function index() {
   const url = new URL(`/public/assets/images/${selected_electrified}/${electrified.calculation_image}`, import.meta.url).href;
 
   const onCloseHandler = () => {
-    getGesture();
-    checkGesture();
+    checkGesture(electrified_page.page_class);
     closePopup();
   };
 

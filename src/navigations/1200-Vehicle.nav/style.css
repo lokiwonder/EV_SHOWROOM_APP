@@ -12,6 +12,18 @@ li {
   justify-content: space-between;
 }
 
+.nav-animation {
+  width: 100vw;
+  height: 7.87vh;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6);
+  bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+
+  animation: opacity-0-1 1.2s;
+}
+
 .nav-left {
   flex: 1;
   margin-left: 2.34vw;
@@ -32,8 +44,38 @@ li {
 }
 
 .nav-center-item {
+  padding: 0vw 3.12vw;
+  text-align: center;
+}
+
+.nav-center-item-hidden {
+  padding: 0vw 3.12vw;
+  visibility: hidden;
+  text-align: center;
+}
+
+.highlights {
   margin: 0vw 3.12vw;
   text-align: center;
+  visibility: visible;
+
+  animation: opacity-0-1 0.8s;
+}
+
+.charging {
+  padding: 0vw 3.12vw;
+  text-align: center;
+  visibility: visible;
+
+  animation: opacity-0-1 0.6s;
+}
+
+.benefits {
+  margin: 0vw 3.12vw;
+  text-align: center;
+  visibility: visible;
+
+  animation: opacity-0-1 0.4s;
 }
 
 .active {

@@ -8,6 +8,13 @@
   src: url('./assets/fonts/HyundaiSansHead-Medium.woff');
 }
 
+body {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+
 .primary-blue {
   color: #002c5f;
 }
@@ -81,88 +88,88 @@ h1 {
   margin: 0px;
   font-family: 'Hyundai Sans Head Medium';
   font-weight: 500;
-  font-size: 9.26vh;
-  line-height: 11.44vh;
+  font-size: 5.21vw;
+  line-height: 6.4375vw;
 }
 
 h2 {
   margin: 0px;
   font-family: 'Hyundai Sans Head Medium';
   font-weight: 500;
-  font-size: 5.56vh;
-  line-height: 6.87vh;
+  font-size: 3.125vw;
+  line-height: 3.8625vw;
 }
 
 h3 {
   margin: 0px;
   font-family: 'Hyundai Sans Head Medium';
   font-weight: 500;
-  font-size: 4.17vh;
-  line-height: 5.15vh;
+  font-size: 2.34375vw;
+  line-height: 2.896875vw;
 }
 
 h4 {
   margin: 0px;
   font-family: 'Hyundai Sans Head Medium';
   font-weight: 500;
-  font-size: 3.24vh;
-  line-height: 4.01vh;
+  font-size: 1.82vw;
+  line-height: 2.253125vw;
 }
 
 h5 {
   margin: 0px;
   font-family: 'Hyundai Sans Head Medium';
   font-weight: 500;
-  font-size: 2.78vh;
-  line-height: 3.43vh;
+  font-size: 1.5625vw;
+  line-height: 1.93125vw;
 }
 
 h6 {
   margin: 0px;
   font-family: 'Hyundai Sans Head Medium';
   font-weight: 500;
-  font-size: 1.85vh;
-  line-height: 2.57vh;
+  font-size: 1.042vw;
+  line-height: 1.2875vw;
 }
 
 .b1 {
   margin: 0px;
   font-family: 'Hyundai Sans Head Regular';
   font-weight: 400;
-  font-size: 3.7vh;
-  line-height: 4.58vh;
+  font-size: 2.83vw;
+  line-height: 2.57vw;
 }
 
 .b2 {
   margin: 0px;
   font-family: 'Hyundai Sans Head Regular';
   font-weight: 400;
-  font-size: 2.78vh;
-  line-height: 3.43vh;
+  font-size: 1.5625vw;
+  line-height: 1.93125vw;
 }
 
 .b3 {
   margin: 0px;
   font-family: 'Hyundai Sans Head Regular';
   font-weight: 400;
-  font-size: 2.22vh;
-  line-height: 2.75vh;
+  font-size: 1.25vw;
+  line-height: 1.54vw;
 }
 
 .b4 {
   margin: 0px;
   font-family: 'Hyundai Sans Head Regular';
   font-weight: 400;
-  font-size: 1.11vh;
-  line-height: 1.37vh;
+  font-size: 0.625vw;
+  line-height: 0.7724vw;
 }
 
 .b5 {
   margin: 0px;
   font-family: 'Hyundai Sans Head Regular';
   font-weight: 400;
-  font-size: 0.926vh;
-  line-height: 1.14vh;
+  font-size: 0.52vw;
+  line-height: 0.64375vw;
 }
 
 button {
@@ -253,4 +260,178 @@ progress {
 .right-arrow {
   width: 0.83vw;
   height: 2.31vh;
+}
+
+.display-none {
+  display: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.hidden-fx {
+  visibility: hidden;
+  flex: 1;
+}
+
+@keyframes menu-background-open {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes menu-open {
+  0% {
+    transform: translateY(100%);
+  }
+  80% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes gesture_prev {
+  from {
+    transform: translateX(-15%);
+  }
+  to {
+    transform: translateX(15%);
+  }
+}
+
+@keyframes gesture_next {
+  from {
+    transform: translateX(15%);
+  }
+  to {
+    transform: translateX(-15%);
+  }
+}
+
+@keyframes opacity-0-1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bottom-to-top {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes template_1_tile {
+  0% {
+    transform: translateX(-30%);
+  }
+  50% {
+    transform: translateX(1.5%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes template_1_img {
+  0% {
+    transform: translateX(30%);
+  }
+  70% {
+    transform: translateX(-1.5%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes template-1-video-img {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes template_2_img {
+  from {
+    clip: rect(0, 100%, 0, 0);
+  }
+  to {
+    clip: rect(0, 0, 0, 0);
+  }
+}
+
+@keyframes template_2_comment {
+  from {
+    opacity: 0;
+    transform: translateX(-60%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes template_3_img {
+  from {
+    transform: scale(.7);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes template_3_img2 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes common_popup {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes next_slide {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes showroommain-end-animation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
