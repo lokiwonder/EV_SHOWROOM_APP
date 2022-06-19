@@ -413,7 +413,7 @@
                             "title": "Exterior",
                             "comment": "Designed for beauty -  but engineered for efficiency.",
                             "description": "",
-                            "image": ".png",
+                            "image": "752e7e11-4289-4529-b922-b04e3dfee418.png",
                             "video": null,
                             "video_image": ""
                         },
@@ -423,19 +423,19 @@
                             "contents": [
                                 {
                                     "translation_status": true,
-                                    "image": ".png",
+                                    "image": "c2c7cf02-b897-482f-a2b7-a77da2535e5b.png",
                                     "comment": "Closed floating grille",
                                     "description": ""
                                 },
                                 {
                                     "translation_status": true,
-                                    "image": ".png",
+                                    "image": "a08bf09c-a6f9-467d-9538-3022a88863d6.png",
                                     "comment": "Full LED headlamps",
                                     "description": ""
                                 },
                                 {
                                     "translation_status": true,
-                                    "image": ".png",
+                                    "image": "e1a49d72-ef7a-4476-a78c-1534a9755f94.png",
                                     "comment": "16″ alloy wheels",
                                     "description": ""
                                 }
@@ -444,7 +444,7 @@
                         {
                             "sequence_number": 3,
                             "type": "template_3",
-                            "image": ".png"
+                            "image": "b0d34d2a-ffb3-4511-90b7-9184f759b422.png"
                         },
                         {
                             "sequence_number": 4,
@@ -453,14 +453,14 @@
                             "title": "Interior",
                             "comment": "Spacious and sophisticated interior.",
                             "description": "",
-                            "image": ".png",
+                            "image": "0a32bb85-cd15-46b0-8fd4-a9a0fbaf1ff4.png",
                             "video": null,
                             "video_image": ""
                         },
                         {
                             "sequence_number": 5,
                             "type": "template_3",
-                            "image": ".png"
+                            "image": "903dae7b-1a20-4457-bd0b-d90bacfd14be.png"
                         }
                     ],
                     "charging": [
@@ -471,7 +471,7 @@
                             "title": "Charge at home",
                             "comment": "Plug in your IONIQ Electric overnight,\nand wake up to a fully charged battery.",
                             "description": "",
-                            "image": ".png",
+                            "image": "aa7bb8e8-ee40-4a2d-936a-3bfc7a2c9ad7.png",
                             "video": "~.mp4",
                             "video_image": ""
                         },
@@ -482,7 +482,7 @@
                             "title": "Charge at work",
                             "comment": "One less stop to worry about after work.\nA growing number of companies are offering\ncharging stations.",
                             "description": "",
-                            "image": ".png",
+                            "image": "c1736adb-170e-4d83-b5fb-be9ab5571919.png",
                             "video": "~.mp4",
                             "video_image": ""
                         },
@@ -493,7 +493,7 @@
                             "title": "Charge everywhere",
                             "comment": "Hyundai’s Charging Station Finder shows you\nreal-time charging station information\nsuch as location connector types,\nand availability on the Bluelink® app on your phone and on your cars navigation display.",
                             "description": "",
-                            "image": "da0e5921-bbee-4cd8-9fad-03265babcebc.png",
+                            "image": "8747bd77-23c1-432a-b56d-454ef4c49aee.png",
                             "video": "~.mp4",
                             "video_image": ""
                         }
@@ -506,7 +506,7 @@
                             "title": "Cost and CO₂ reduction",
                             "comment": "IONIQ 5 is not only a zero emissions vehicle: often the cost of operation is lower compared to combustion counterparts, especially if you charge it at home.*",
                             "description": "",
-                            "image": ".png",
+                            "image": "cd7940ff-4e2d-42b2-b195-368866f55ba6.png",
                             "video": "~.mp4",
                             "video_image": ""
                         },
@@ -517,7 +517,7 @@
                             "title": "Ultra fast battery charging",
                             "comment": "Charge up to 80% in 18 minutes.\nGain 100km range in 5 minutes.",
                             "description": "",
-                            "image": ".png",
+                            "image": "c01aac83-bf11-4dcf-8a40-ef6987ff67c3.png",
                             "video": "~.mp4",
                             "video_image": ""
                         },
@@ -528,7 +528,7 @@
                             "title": "Driving range of up to 481 km",
                             "comment": "With Hyundai’s cutting-edge smart tech,\nthe launch version of IONIQ 5 with all-wheel drive delivers a range up to 481 km*.",
                             "description": "",
-                            "image": ".png",
+                            "image": "8a27648f-2fad-4cf4-ac36-43abecaa5928.png",
                             "video": "~.mp4",
                             "video_image": ""
                         },
@@ -539,7 +539,7 @@
                             "title": "Less maintenance,\nLower cost",
                             "comment": "While an internal combustion engine contains hundreds of moving parts,\nan electric motor only needs around\nhalf a dozen, significantly reducing\nthe probability of something breaking.\nThere is no need for oil changes, either. ",
                             "description": "",
-                            "image": ".png",
+                            "image": "0d9b411e-1f55-4013-8d19-d85025dc1b1c.png",
                             "video": "~.mp4",
                             "video_image": ""
                         }

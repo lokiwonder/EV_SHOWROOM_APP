@@ -2,6 +2,12 @@ import { app, BrowserWindow, shell } from 'electron';
 import { release } from 'os';
 import { join } from 'path';
 
+declare global {
+  interface BrowserWindow {
+    removeLoading: string;
+  }
+}
+
 // Disable GPU Acceleration for Windows 7
 if (release().startsWith('6.1')) app.disableHardwareAcceleration();
 
@@ -16,7 +22,7 @@ process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 
 let win: BrowserWindow | null = null;
 // Here you can add more preload scripts
-const splash = join(__dirname, '../preload/splash.js');
+let splash; // = join(__dirname, '../preload/splash.js');
 // 🚧 Use ['ENV_NAME'] to avoid vite:define plugin
 const url = `http://${process.env['VITE_DEV_SERVER_HOST']}:${process.env['VITE_DEV_SERVER_PORT']}`;
 
@@ -69,7 +75,7 @@ app.on('second-instance', () => {
 });
 
 app.on('activate', () => {
-  const allWindows = BrowserWindow.getAllWindows();
+  const allWindows: BrowserWindow[] = BrowserWindow.getAllWindows();
   if (allWindows.length) {
     allWindows[0].focus();
   } else {

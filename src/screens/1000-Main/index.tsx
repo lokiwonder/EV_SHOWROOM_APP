@@ -154,16 +154,32 @@ function main() {
     useEffect(() => {
       if(gesture && change) {
         setImgAnimation('vehicle-main-img-animation');
-        setTimeout(() => {
-          setTitleAnimation('electrified-title-animaion');
-        }, 900);
-        setTimeout(() => {
-          setSubAnimation('b2 electrified-sub-animaion');
-        }, 1200);
+        if(selected_electrified == 'KONA Electric') {
+          setTimeout(() => {
+            setTitleAnimation('electrified-title-animaion white');
+          }, 900);
+          setTimeout(() => {
+            setSubAnimation('b2 electrified-sub-animaion white');
+          }, 1200);
+        }
+        else {
+          setTimeout(() => {
+            setTitleAnimation('electrified-title-animaion');
+          }, 900);
+          setTimeout(() => {
+            setSubAnimation('b2 electrified-sub-animaion');
+          }, 1200);
+        }
       }
       else {
-        setTitleAnimation('');
-        setSubAnimation('b2');
+        if(selected_electrified == 'KONA Electric') {
+          setTitleAnimation('white');
+          setSubAnimation('b2 white');
+        }
+        else {
+          setTitleAnimation('');
+          setSubAnimation('b2');
+        }
       }
       
     }, []);

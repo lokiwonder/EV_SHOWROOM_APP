@@ -11,18 +11,22 @@ function Menu() {
   const { selectVehicle, getSelectedVehicleIndex } = useElectrifiedSelectStore();
   const { electrified_page, setMainPage } = useElectrifiedPageStore();
   const { electrifies } = useElectrifiedStore();
-  const { checkGesture, noChange } = useGestureStore();
-  const [ menu_animation, setMenuAnimations ] = useState<string>('menu-background-open');
+  const { checkGesture, noChange, setChange } = useGestureStore();
+  const [menu_animation, setMenuAnimations] = useState<string>('menu-background-open');
 
   const onSelectHandler = (electrified_name: string) => {
-    const electrified_index = getSelectedVehicleIndex(electrified_name, electrifies);
-    const arg = {
-      electrified_index,
-      electrifies,
-    };
-    selectVehicle(electrified_name);
-    setMainPage(arg);
-    setHide();
+    setMenuAnimations('menu-background-close');
+    setTimeout(() => {
+      const electrified_index = getSelectedVehicleIndex(electrified_name, electrifies);
+      const arg = {
+        electrified_index,
+        electrifies,
+      };
+      selectVehicle(electrified_name);
+      setMainPage(arg);
+      setHide();
+      setChange();
+    }, 600);
   };
 
   const onCloseHandler = () => {
@@ -33,12 +37,12 @@ function Menu() {
       setHide();
       setMenuAnimations('menu-background-open');
     }, 600);
-  }
+  };
 
   useEffect(() => {
     // setMenuAnimations('menu-background-open');
     setTimeout(() => {}, 600);
-  }, [])
+  }, []);
 
   return (
     <div hidden={hide} className={menu_animation}>

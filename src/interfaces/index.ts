@@ -47,7 +47,7 @@ export interface Template_1 {
   translation_status: boolean;
   title: string;
   comment: string;
-  descripstion: string;
+  description: string;
   image: string;
   video: string | null;
   video_image: string;
@@ -63,7 +63,7 @@ export interface Template_2_item {
   translation_status: boolean;
   image: string;
   comment: string;
-  descripstion: string;
+  description: string;
 }
 
 export interface Template_3 {
