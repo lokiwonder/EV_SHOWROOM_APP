@@ -16,6 +16,7 @@ function Template_1() {
   const [title_animation, setTitleAnimation] = useState<string>('title');
   const [comment_animation, setCommentAnimation] = useState<string>('hidden');
   const [img_Animation, setImgAnimation] = useState<string>('img-container');
+  const [description_Animation, setDescriptionAnimation] = useState<string>('hidden');
   const [video_img_animation, setVideoImgAnimation] = useState<string>('vedio_img_container');
 
   // description: 출력할 이미지 url control //
@@ -36,15 +37,17 @@ function Template_1() {
       setImgAnimation('img-container-animation');
       setTimeout(() => {
         setCommentAnimation('b2 comment-animation');
+        setDescriptionAnimation('b4 description-animation');
       }, 200);
       if (electrified_page.page_present === 0) setVideoImgAnimation('vedio_img_container-animation');
     } else {
       setTitleAnimation('title');
       setImgAnimation('img-container');
       setCommentAnimation('b2 comment');
+      setDescriptionAnimation('b4 description');
       setVideoImgAnimation('vedio_img_container');
     }
-  }, [electrified_page.page]);
+  }, []);
   //        function        //
 
   // todo: 조건부 렌더링 부분 로컬 컴포넌트 함수로 바꾸기 //
@@ -55,7 +58,7 @@ function Template_1() {
         <div>
           <h2 className={title_animation}>{electrified_page.page.title}</h2>
           <p className={comment_animation}>{electrified_page.page.comment}</p>
-          <p className="b4 description">{electrified_page.page.description}</p>
+          <p className={description_Animation}>{electrified_page.page.description}</p>
         </div>
         <div className="contents-bottom">
           {electrified_page.page_class !== 'highlights' && (

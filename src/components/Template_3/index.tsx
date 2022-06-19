@@ -6,18 +6,21 @@ import './style.css';
 function Template_3() {
   const { selected_electrified } = useElectrifiedSelectStore();
   const { electrified_page } = useElectrifiedPageStore();
-  const { gesture, change, setChange, noChange, checkGesture } = useGestureStore();
-  const { first, setFirst, notFirst } = usetemplate_3_Store();
+  const { gesture, change, noChange } = useGestureStore();
+  const { first } = usetemplate_3_Store();
 
   const [image_animation, setImageAnimation] = useState<string>('template-3-image');
 
   const url = new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.image}`, import.meta.url).href;
 
   useEffect(() => {
-    if(first && gesture && change)
+    if(first && gesture && change) {
       setImageAnimation(`template-3-image template-3-image-animaion`);
-    else if (!first && gesture && change)
+    }
+      
+    else if (!first && gesture && change) {
       setImageAnimation(`template-3-image template-3-image-animaion2`);
+    }
     else
       setImageAnimation('template-3-image');
   }, [])

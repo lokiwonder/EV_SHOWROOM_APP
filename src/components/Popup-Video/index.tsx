@@ -13,6 +13,9 @@ function index(props: Props) {
   const { checkGesture } = useGestureStore();
   const { closePopup } = usePopupStore();
 
+  const url = new URL(`/public/assets/images/IONIQ 5/1d767afa-5a2a-471a-b488-7462aa716324.png`, import.meta.url).href;
+  
+
   const onCloseHandler = () => {
     checkGesture(electrified_page.page_class);
     closePopup();
@@ -27,7 +30,7 @@ function index(props: Props) {
           </button>
         </div>
         <div className="popup-tmp-container">
-          <img className="popup-tmp-img" src={video} />
+          <img className="popup-tmp-img" src={url} />
         </div>
       </div>
     </div>

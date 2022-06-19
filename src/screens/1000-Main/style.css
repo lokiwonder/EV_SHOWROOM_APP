@@ -99,6 +99,18 @@
   animation: next_slide 0.6s;
 }
 
+.next-slide-animation {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 17.4vw;
+  height: 92.037vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .next-slide-content {
   padding-top: 2.22vh;
 }

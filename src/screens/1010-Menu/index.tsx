@@ -4,6 +4,7 @@ import { useElectrifiedMenuStore, useElectrifiedSelectStore, useElectrifiedPageS
 
 import './style.css';
 import { MenuCloseIcon } from '@img';
+import { useEffect, useState } from 'react';
 
 function Menu() {
   const { hide, setHide } = useElectrifiedMenuStore();
@@ -11,6 +12,7 @@ function Menu() {
   const { electrified_page, setMainPage } = useElectrifiedPageStore();
   const { electrifies } = useElectrifiedStore();
   const { checkGesture } = useGestureStore();
+  const [ menu_animation, setMenuAnimations ] = useState<string>('menu-background-open');
 
   const onSelectHandler = (electrified_name: string) => {
     const electrified_index = getSelectedVehicleIndex(electrified_name, electrifies);
@@ -24,12 +26,21 @@ function Menu() {
   };
 
   const onCloseHandler = () => {
-    checkGesture(electrified_page.page_class);
-    setHide();
+    setMenuAnimations('menu-background-close');
+    setTimeout(() => {
+      checkGesture(electrified_page.page_class);
+      setHide();
+      setMenuAnimations('menu-background-open');
+    }, 600);
   }
 
+  useEffect(() => {
+    // setMenuAnimations('menu-background-open');
+    setTimeout(() => {}, 600);
+  }, [])
+
   return (
-    <div hidden={hide} className="menu-background-start">
+    <div hidden={hide} className={menu_animation}>
       <div className="menu-open-animation">
         <div className="vehicle-list">
           <h6 className="list-title white">electrified</h6>

@@ -31,22 +31,29 @@ function main_nav(prop: Props) {
     resetSelectVehicle();
     resetElectrifiedPage();
     setNext(true);
+    checkGesture('');
+  };
+
+  const onMainHandler = () => {
+    checkGesture('main');
+    setMainPage(index_arg);
+    setNext(true);
   };
 
   const onHighlightsHandler = () => {
-    checkGesture(electrified_page.page_class);
+    checkGesture('highlights');
     setHighlightPage(index_arg);
     setNext(true);
   }
 
   const onChargingHandler = () => {
-    checkGesture(electrified_page.page_class);
+    checkGesture('charging');
     setChargingPage(index_arg);
     setNext(true);
   }
 
   const onBenefitsHandler = () => {
-    checkGesture(electrified_page.page_class);
+    checkGesture('benefits');
     setBenefitPage(index_arg);
     setNext(true);
   }
@@ -55,18 +62,21 @@ function main_nav(prop: Props) {
     checkGesture(electrified_page.page_class);
     openPopup('360');
     setNext(true);
+    checkGesture('');
   }
 
   const onCalculationsHandler = () => {
     checkGesture(electrified_page.page_class);
     openPopup('calculator');
     setNext(true);
+    checkGesture('');
   }
 
   const onElectrifiedMenuHandler = () => {
     checkGesture(electrified_page.page_class);
     setShow();
     setNext(true);
+    checkGesture('');
   }
 
   useEffect(() => {
@@ -94,11 +104,11 @@ function main_nav(prop: Props) {
       {electrified_page.page_class !== '' && electrified_page.page_class !== 'main' && <progress value={electrified_page.page_present + 1} max={electrified_page.page_length}></progress>}
       <nav className={nav_animation}>
         <div className="nav-left">
-          <button onClick={() => onHomeHandler()}>
+          <button onClick={onHomeHandler}>
             <img className="nav-img" src={HomeIcon} />
           </button>
           <img className="left-bar" src={BarIcon} />
-          <button onClick={() => setMainPage(index_arg)}>
+          <button onClick={onMainHandler}>
             <h6>{selected_electrified}</h6>
           </button>
         </div>

@@ -6,34 +6,21 @@ import './style.css';
 function Template_2() {
   const { electrified_page } = useElectrifiedPageStore();
   const { selected_electrified } = useElectrifiedSelectStore();
-  const { gesture, change, setChange, noChange, checkGesture } = useGestureStore();
+  const { gesture, change, setChange } = useGestureStore();
 
   const [img_animation, setImageAnimation] = useState<string>('template-2-img');
   const [commnet_animation, setCommentAnimation] = useState<string>('display-none');
 
   useEffect(() => {
-    if ( window.innerWidth / window.innerHeight < 1.777 ) {
-      if(gesture && change) {
-        setImageAnimation('template-2-img-w template-2-img-animation');
-        setTimeout(() => {
-          setCommentAnimation('b2 template-2-comment-w template-2-comment-animation');
-        }, 400)
-      }
-      else {
-        setImageAnimation('template-2-img-w');
-        setCommentAnimation('b2 template-2-comment-w')
-      }
-    } else {
-      if(gesture && change) {
-        setImageAnimation('template-2-img-h template-2-img-animation');
-        setTimeout(() => {
-          setCommentAnimation('b2 template-2-comment-h template-2-comment-animation');
-        }, 400)
-      }
-      else {
-        setImageAnimation('template-2-img-h');
-        setCommentAnimation('b2 template-2-comment-h')
-      }
+    if(gesture && change) {
+      setImageAnimation('template-2-img template-2-img-animation');
+      setTimeout(() => {
+        setCommentAnimation('b2 template-2-comment template-2-comment-animation');
+      }, 400);
+    }
+    else {
+      setImageAnimation('template-2-img');
+      setCommentAnimation('b2 template-2-comment')
     }
   }, [])
 

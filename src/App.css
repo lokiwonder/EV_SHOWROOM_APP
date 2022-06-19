@@ -277,22 +277,24 @@ progress {
 
 @keyframes menu-background-open {
   0% {
+    height: 120vh;
     transform: translateY(100%);
   }
+  99% {
+    height: 120vh;
+  }
   100% {
+    height: 100vh;
     transform: translateY(0%);
   }
 }
 
-@keyframes menu-open {
+@keyframes menu-background-close {
   0% {
-    transform: translateY(100%);
-  }
-  80% {
-    transform: translateY(-10%);
+    transform: translateY(000%);
   }
   100% {
-    transform: translateY(0%);
+    transform: translateY(100%);
   }
 }
 
@@ -327,6 +329,17 @@ progress {
   from {
     opacity: 0;
     transform: translateY(20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes bottom-to-top2 {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
   }
   to {
     opacity: 1;
@@ -372,21 +385,19 @@ progress {
 
 @keyframes template_2_img {
   from {
-    clip: rect(0, 100%, 0, 0);
+    clip-path: inset(0px 100% 0px 0px);
   }
   to {
-    clip: rect(0, 0, 0, 0);
+    clip-path: inset(0px 0% 0px 0px);
   }
 }
 
 @keyframes template_2_comment {
   from {
-    opacity: 0;
-    transform: translateX(-60%);
+    clip-path: inset(0px 100% 0px 0px);
   }
   to {
-    opacity: 1;
-    transform: translateX(0%);
+    clip-path: inset(0px 0% 0px 0px);
   }
 }
 
@@ -401,7 +412,7 @@ progress {
 
 @keyframes template_3_img2 {
   0% {
-    opacity: 1;
+    opacity: 0.8;
   }
   100% {
     opacity: 1;
@@ -411,6 +422,7 @@ progress {
 
 @keyframes common_popup {
   from {
+    opacity: 0;
     transform: translateY(100%);
   }
   to {
@@ -420,7 +432,7 @@ progress {
 
 @keyframes next_slide {
   from {
-    transform: translateX(100%);
+    transform: translateX(30%);
   }
   to {
     transform: translateX(0%);
@@ -435,3 +447,4 @@ progress {
     opacity: 0;
   }
 }
+

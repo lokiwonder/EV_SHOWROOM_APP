@@ -27,6 +27,11 @@ const useStore = create<GestureState>((set) => ({
           gesture: false,
         }))
       }, 10000);
+    } else {
+      clearTimeout(timeout);
+      set((state) => ({
+        gesture: true,
+      }));
     }
   },
   setChange: () =>
@@ -37,7 +42,6 @@ const useStore = create<GestureState>((set) => ({
    set((state) => ({
      change: false,
    })), 
-
 }));
 
 export default useStore;

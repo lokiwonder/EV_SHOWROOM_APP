@@ -41,6 +41,13 @@
     color: #CCCCCC;
 }
 
+.description-animation {
+    max-width: 33.23vw;
+    color: #CCCCCC;
+
+    animation: bottom-to-top2 0.8s;
+}
+
 .page-lenght {
     font-family: 'Hyundai Sans Head Medium';
     font-weight: 500;
@@ -99,4 +106,6 @@
     width: 95.37vh;
     height: 80.55vh;
     */
+    width: 52.64vw;
+    height: 45.3125vw;
 }

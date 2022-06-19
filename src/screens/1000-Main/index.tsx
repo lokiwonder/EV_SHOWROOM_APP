@@ -15,9 +15,9 @@ function main() {
   const { electrifies } = useElectrifiedStore();
   const { selected_electrified, selectVehicle, getSelectedVehicleIndex } = useElectrifiedSelectStore();
   const { electrified_page, setMainPage, setChargingPage, setBenefitPage, increasePage, decreasePage } = useElectrifiedPageStore();
-  const { gesture, change,  checkGesture, setChange, noChange } = useGestureStore();
+  const { gesture, checkGesture, setChange, noChange } = useGestureStore();
   const { popup } = usePopupStore();
-  const { first, setFirst, notFirst } = usetemplate_3_Store();
+  const { setFirst, notFirst } = usetemplate_3_Store();
 
   const electrified_index = getSelectedVehicleIndex(selected_electrified, electrifies);
   const index_arg = { electrified_index, electrifies };
@@ -25,22 +25,22 @@ function main() {
   const [next, setNext] = useState<boolean>(true);
 
   // ? 이거 뭐지???
-  new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.image}`, import.meta.url).href;
   const i = R.findIndex(R.propEq('electrified_item_name', selected_electrified))(electrifies);
   const electrified = electrifies[i];
 
   let mouseX = 0;
   //                variable                //
   //                variable                //
-  
 
   //                function                //
   //                function                //
   // description: 클릭시 화면 제스쳐
-  const onActionHandler = () => checkGesture(electrified_page.page_class)
+  const onActionHandler = () => {
+    checkGesture(electrified_page.page_class);
+  };
 
   // description: 화면을 눌렀을 때 (때지 않음)
-  const touchStart = (e: MouseEvent<HTMLDivElement>) => mouseX = e.clientX;
+  const touchStart = (e: MouseEvent<HTMLDivElement>) => (mouseX = e.clientX);
 
   // todo: 훅으로 전환
   // description: 화면에서 땠을 때
@@ -51,44 +51,49 @@ function main() {
       if (mouseX - e.clientX > window.innerWidth / 5) {
         // description: 페이지가 길이 - 1 낮으면 화면 전환
         if (electrified_page.page_present < electrified_page.page_length - 1) {
-          // description: 만약 화면이 template_3이면 
+          setChange();
+          // description: 만약 화면이 template_3이면
           if (electrified_page.page.type === 'template_3') notFirst();
           else setFirst();
           setNext(true);
           increasePage(index_arg);
-          setChange();
+          checkGesture(electrified_page.page_class);
         }
         // description: 페이지가 길이 - 1 이면 오른쪽 설명 창 띄움 (state 먹이기) (false)
         else if (next && electrified_page.page_present == electrified_page.page_length - 1) {
-          setNext(false);
           noChange();
+          setNext(false);
+          checkGesture(electrified_page.page_class);
         }
         // description: state가 false 이면 true 로 바꾸고 다음 창으로 전환
         else if (!next) {
           if (electrified_page.page_class === 'highlights') {
+            setChange();
             // todo: constants로 변경
             // description: 현재 페이지가 highlights 일 때
             if (electrified_page.page.type === 'template_3') notFirst();
             else setFirst();
             setNext(true);
             setChargingPage(index_arg);
-            setChange();
+            checkGesture(electrified_page.page_class);
           }
           // description: 현재 페이지가 charging 일 때
           else if (electrified_page.page_class === 'charging') {
+            setChange();
             if (electrified_page.page.type === 'template_3') notFirst();
             else setFirst();
             setNext(true);
             setBenefitPage(index_arg);
-            setChange();
+            checkGesture(electrified_page.page_class);
           }
           // description: 현재 페이지가 benefits 일 때
           else if (electrified_page.page_class === 'benefits') {
+            setChange();
             if (electrified_page.page.type === 'template_3') notFirst();
             else setFirst();
             setNext(true);
             setMainPage(index_arg);
-            setChange();
+            checkGesture('main');
           }
         }
       }
@@ -97,12 +102,13 @@ function main() {
     else if (mouseX <= window.innerWidth / 2) {
       // description: 이전 화면으로 이동 (메인이 아니면서 페이지가 0보다 크면 화면 전환)
       if ((mouseX - e.clientX) * -1 > window.innerWidth / 5 && electrified_page.page_present > 0) {
-          setNext(true);
-          decreasePage(index_arg);
-          setChange();
+        setNext(true);
+        decreasePage(index_arg);
+        setChange();
+        checkGesture(electrified_page.page_class);
       }
     }
-    checkGesture(electrified_page.page_class);
+    // checkGesture(electrified_page.page_class);
   };
   //                function                //
   //                function                //
@@ -121,10 +127,10 @@ function main() {
 
     useEffect(() => {
       return () => {
-          setAnimation('fx main-background end-animation');
-          setTimeout(() => {}, 1000);
+        setAnimation('fx main-background end-animation');
+        setTimeout(() => {}, 1000);
       };
-    }, [])
+    }, []);
     return (
       <div className={animation}>
         {electrifies && electrifies.map((electrified, idx) => <Item electrified_name={electrified.electrified_item_name} delay={idx} onSelectHandler={onSelectHandler} />)}
@@ -188,14 +194,22 @@ function main() {
 
   // description:
   const NextSlideComponent = () => {
+    useEffect(() => {
+
+    }, [])
     return (
       <div className="next-slide bg-primary-blue">
         <div>
           <h3 className="white">
-            Next&nbsp;
+          {electrified_page.page_class !== 'benefits' ? 'Next ' : 'Go to home '}
             <img className="right-arrow" src={RightArrowIcon} />
           </h3>
-          <p className="b2 white next-slide-content">Full Electric</p>
+          {electrified_page.page_class !== 'benefits' && (
+            <p className="b2 white next-slide-content">
+            {electrified_page.page_class === 'highlights' && 'Full Electric'}
+            {electrified_page.page_class === 'charging' && 'Benefits'}
+          </p>
+          )}
         </div>
       </div>
     );

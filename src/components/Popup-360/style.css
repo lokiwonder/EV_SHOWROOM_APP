@@ -16,7 +16,7 @@
     margin: 4.17vh;
     flex: 1;
     background-image: url('../../assets/images/Background360.png');
-    background-position: 'center';
+    background-position: 'cover';
     background-size: 100%;
 }
 
@@ -39,11 +39,12 @@
     height: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .popup-360-contents-img {
     width: 80.99vw;
-    height: 83.85vh;
+    height: 47.17vw;
 }
 
 .popup-360-contents-btn {
