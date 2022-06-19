@@ -13,9 +13,9 @@ function main() {
   //                variable                //
   //                variable                //
   const { electrifies } = useElectrifiedStore();
-  const { selected_electrified, selectVehicle, getSelectedVehicleIndex } = useElectrifiedSelectStore();
+  const { selected_electrified, selectVehicle, getSelectedVehicleIndex, resetSelectVehicle } = useElectrifiedSelectStore();
   const { electrified_page, setMainPage, setChargingPage, setBenefitPage, increasePage, decreasePage } = useElectrifiedPageStore();
-  const { gesture, change, checkGesture, setChange, noChange } = useGestureStore();
+  const { gesture, change, home, checkGesture, setChange, noChange, setHome } = useGestureStore();
   const { popup } = usePopupStore();
   const { setFirst, notFirst } = usetemplate_3_Store();
 
@@ -285,6 +285,15 @@ function main() {
   };
   //                component                //
   //                component                //
+
+  useEffect(() => {
+    if(home) {
+      setHome();
+      resetSelectVehicle();
+      setChange();
+      checkGesture('');
+    }
+  }, [home])
 
   return <>{!selected_electrified ? <ShowroomMainComponent /> : <ElectrifiedComponent />}</>;
 }

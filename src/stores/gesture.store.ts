@@ -4,31 +4,45 @@ import create from 'zustand';
 interface GestureState {
   gesture: boolean;
   change: boolean;
+  home: boolean;
   checkGesture: (type: string) => void;
   setChange: () => void;
   noChange: () => void;
+  setHome: () => void;
 }
 //        interface        //
 
-let timeout: NodeJS.Timeout;
+let gesture_timeout: NodeJS.Timeout;
+let home_timeout: NodeJS.Timeout;
 
 const useStore = create<GestureState>((set) => ({
   gesture: true,
   change: true,
+  home: false,
   checkGesture: (class_name: string) => {
+    set((state) => ({
+      home: false
+    }))
     if (class_name !== '' && class_name !== 'main') {
       set((state) => ({
         gesture: true,
       }));
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
+      clearTimeout(gesture_timeout);
+      clearTimeout(home_timeout);
+      gesture_timeout = setTimeout(() => {
         set((state) => ({
           change: false,
           gesture: false,
         }))
       }, 10000);
+      gesture_timeout = setTimeout(() => {
+        set((state) => ({
+          home: true
+        }))
+      }, 15000);
     } else {
-      clearTimeout(timeout);
+      clearTimeout(gesture_timeout);
+      clearTimeout(home_timeout);
       set((state) => ({
         gesture: true,
       }));
@@ -42,6 +56,9 @@ const useStore = create<GestureState>((set) => ({
    set((state) => ({
      change: false,
    })), 
+  setHome: () => set((state) => ({
+    home: false,
+  })), 
 }));
 
 export default useStore;
