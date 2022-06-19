@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-import { useElectrifiedStore } from '@store';
+import { useElectrifiedStore, useGestureStore } from '@store';
 
 import { MainButtonIcon } from '@img';
 import './style.css';
@@ -17,6 +17,7 @@ function main_item(props: Props) {
   //        variables
   const { electrifies } = useElectrifiedStore();
   const { electrified_name, delay, onSelectHandler } = props;
+  const { gesture, change } = useGestureStore();
   const [ animation, setAnimation ] = useState<string>('hidden-fx');
 
   const i = R.findIndex(R.propEq('electrified_item_name', electrified_name))(electrifies);
@@ -27,19 +28,20 @@ function main_item(props: Props) {
 
   // description: 에니메이션 지연
   useEffect(() => {
-    setTimeout(() => {setAnimation('item')}, 400 * delay)
+    if(gesture && change) setTimeout(() => {setAnimation('item-animation')}, 400 * delay);
+    else setAnimation('item');
   }, []);
 
   return (
     <div className={animation}>
       <div className="item-contents">
-        <h3>{electrified.electrified_item_name}</h3>
+        <h3 className="opacity-80">{electrified.electrified_item_name}</h3>
         <div className="electrified-image-container">
           <img className="vehicle-img" src={url} />
         </div>
         <div>
           <button onClick={() => onSelectHandler(electrified_name, i)}>
-            <img className="main-button-img" src={MainButtonIcon} />
+            <img className="main-button-img opacity-80" src={MainButtonIcon} />
           </button>
         </div>
       </div>

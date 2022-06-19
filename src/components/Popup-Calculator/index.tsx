@@ -4,6 +4,7 @@ import './style.css';
 
 import { PopupCloseIcon } from '@img';
 import { useElectrifiedSelectStore, useElectrifiedStore, usePopupStore, useGestureStore, useElectrifiedPageStore } from '@store';
+import { useEffect, useState } from 'react';
 
 function index() {
   const { electrifies } = useElectrifiedStore();
@@ -12,18 +13,37 @@ function index() {
   const { checkGesture } = useGestureStore();
   const { closePopup } = usePopupStore();
 
+  const [bg_animation, setBgAnimation] = useState<string>('hidden');
+  const [content_animation, setContentAnimation] = useState<string>('hidden');
+
   const i = R.findIndex(R.propEq('electrified_item_name', selected_electrified))(electrifies);
   const electrified = electrifies[i];
   const url = new URL(`/public/assets/images/${selected_electrified}/${electrified.calculation_image}`, import.meta.url).href;
 
   const onCloseHandler = () => {
-    checkGesture(electrified_page.page_class);
-    closePopup();
-  };
+    setContentAnimation('popup-calculator-container-close bg-light-sand');
+    setTimeout(() => {
+      setBgAnimation('popup-calculator-bg-close');
+    }, 200);
+    setTimeout(() => {
+      setContentAnimation('hidden');
+      setBgAnimation('hidden');
+      checkGesture(electrified_page.page_class);
+      closePopup();
+    }, 500);
+  } 
+
+  useEffect(() => {
+    setBgAnimation('popup-calculator-bg-open');
+    setTimeout(() => {
+      setContentAnimation('popup-calculator-container-open bg-light-sand');
+    }, 200)
+  }, [])
 
   return (
-    <div className="popup-calculator-bg">
-      <div className="popup-container bg-light-sand">
+    <div className="popup-calculator">
+      <div className={bg_animation}></div>
+      <div className={content_animation}>
         <div>
           <button className="popup-calculator-close-btn" onClick={onCloseHandler}>
             <img className="popup-calculator-close-img" src={PopupCloseIcon}></img>

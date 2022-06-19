@@ -11,7 +11,7 @@ function Menu() {
   const { selectVehicle, getSelectedVehicleIndex } = useElectrifiedSelectStore();
   const { electrified_page, setMainPage } = useElectrifiedPageStore();
   const { electrifies } = useElectrifiedStore();
-  const { checkGesture } = useGestureStore();
+  const { checkGesture, noChange } = useGestureStore();
   const [ menu_animation, setMenuAnimations ] = useState<string>('menu-background-open');
 
   const onSelectHandler = (electrified_name: string) => {
@@ -29,6 +29,7 @@ function Menu() {
     setMenuAnimations('menu-background-close');
     setTimeout(() => {
       checkGesture(electrified_page.page_class);
+      noChange();
       setHide();
       setMenuAnimations('menu-background-open');
     }, 600);

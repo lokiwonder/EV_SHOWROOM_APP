@@ -172,6 +172,10 @@ h6 {
   line-height: 0.64375vw;
 }
 
+.opacity-80 {
+  opacity: 0.8;
+}
+
 button {
   border: 0;
   outline: 0;
@@ -375,8 +379,14 @@ progress {
   0% {
     opacity: 0;
   }
-  50% {
-    opacity: 0;
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes template-1-video-img2 {
+  0% {
+    opacity: 0.3;
   }
   100% {
     opacity: 1;
@@ -420,13 +430,39 @@ progress {
 }
 
 
-@keyframes common_popup {
+@keyframes common_popup-open {
   from {
     opacity: 0;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
+@keyframes common_popup-close {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes common_popup-content-open {
+  from {
     transform: translateY(100%);
   }
   to {
     transform: translateY(0%);
+  }
+}
+
+@keyframes common_popup-content-close {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
   }
 }
 
@@ -448,3 +484,14 @@ progress {
   }
 }
 
+@keyframes next-slide-title {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}

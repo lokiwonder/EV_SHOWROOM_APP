@@ -15,7 +15,7 @@ function main() {
   const { electrifies } = useElectrifiedStore();
   const { selected_electrified, selectVehicle, getSelectedVehicleIndex } = useElectrifiedSelectStore();
   const { electrified_page, setMainPage, setChargingPage, setBenefitPage, increasePage, decreasePage } = useElectrifiedPageStore();
-  const { gesture, checkGesture, setChange, noChange } = useGestureStore();
+  const { gesture, change, checkGesture, setChange, noChange } = useGestureStore();
   const { popup } = usePopupStore();
   const { setFirst, notFirst } = usetemplate_3_Store();
 
@@ -117,22 +117,16 @@ function main() {
   //                component                //
   // description:
   const ShowroomMainComponent = () => {
-    const [animation, setAnimation] = useState<string>('fx main-background');
 
     const onSelectHandler = (vehicle_name: string, i: number) => {
       // todo: 화면 전환 애니메이션 작성
       selectVehicle(vehicle_name);
       setMainPage({ electrified_index: i, electrifies });
+      setChange();
     };
 
-    useEffect(() => {
-      return () => {
-        setAnimation('fx main-background end-animation');
-        setTimeout(() => {}, 1000);
-      };
-    }, []);
     return (
-      <div className={animation}>
+      <div className="fx main-background">
         {electrifies && electrifies.map((electrified, idx) => <Item electrified_name={electrified.electrified_item_name} delay={idx} onSelectHandler={onSelectHandler} />)}
         <MainNav />
       </div>
@@ -153,27 +147,35 @@ function main() {
 
   // description:
   const ElectrifiedMainComponent = () => {
-    const [titleAnimation, setTitleAnimation] = useState<string>('display-none');
-    const [subAnimation, setSubAnimation] = useState<string>('display-none');
+    const [title_animation, setTitleAnimation] = useState<string>('display-none');
+    const [sub_animation, setSubAnimation] = useState<string>('display-none');
+    const [img_animation, setImgAnimation] = useState<string>('vehicle-main-img');
 
     useEffect(() => {
-      setTimeout(() => {
-        setTitleAnimation('electrified-title-animaion');
-      }, 900);
-      setTimeout(() => {
-        setSubAnimation('b2 electrified-sub-animaion');
-      }, 1200);
+      if(gesture && change) {
+        setImgAnimation('vehicle-main-img-animation');
+        setTimeout(() => {
+          setTitleAnimation('electrified-title-animaion');
+        }, 900);
+        setTimeout(() => {
+          setSubAnimation('b2 electrified-sub-animaion');
+        }, 1200);
+      }
+      else {
+        setTitleAnimation('');
+        setSubAnimation('b2');
+      }
+      
     }, []);
 
     return (
       <div className="vehicle-main-img-container">
         <div className="main-text-container">
-          <h1 className={titleAnimation}>{selected_electrified}</h1>
-          <p className={subAnimation}>{electrified.electrified_subtitle}</p>
+          <h1 className={title_animation}>{selected_electrified}</h1>
+          <p className={sub_animation}>{electrified.electrified_subtitle}</p>
         </div>
         <div className="vehicle-main-image-box">
-          {/* <img className="vehicle-main-img" src={new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.image}`, import.meta.url).href} /> */}
-          <img className="vehicle-main-img" src={new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.image}`, import.meta.url).href} />
+          <img className={img_animation} src={new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.image}`, import.meta.url).href} />
         </div>
       </div>
     );
@@ -194,13 +196,48 @@ function main() {
 
   // description:
   const NextSlideComponent = () => {
-    useEffect(() => {
+    const [next_slide_animation, setNextSlideAnimation] = useState<string>('next-slide bg-primary-blue');
 
-    }, [])
+    const onNextHandler = () => {
+      if (electrified_page.page_class === 'highlights') {
+        setChange();
+        // todo: constants로 변경
+        // description: 현재 페이지가 highlights 일 때
+        if (electrified_page.page.type === 'template_3') notFirst();
+        else setFirst();
+        setNext(true);
+        setChargingPage(index_arg);
+        checkGesture(electrified_page.page_class);
+      }
+      // description: 현재 페이지가 charging 일 때
+      else if (electrified_page.page_class === 'charging') {
+        setChange();
+        if (electrified_page.page.type === 'template_3') notFirst();
+        else setFirst();
+        setNext(true);
+        setBenefitPage(index_arg);
+        checkGesture(electrified_page.page_class);
+      }
+      // description: 현재 페이지가 benefits 일 때
+      else if (electrified_page.page_class === 'benefits') {
+        setChange();
+        if (electrified_page.page.type === 'template_3') notFirst();
+        else setFirst();
+        setNext(true);
+        setMainPage(index_arg);
+        checkGesture('main');
+      }
+    }
+
+    useEffect(() => {
+      if(!gesture) setNextSlideAnimation('next-slide bg-primary-blue');
+      else setNextSlideAnimation('next-slide-animation  bg-primary-blue');
+    }, []);
+
     return (
-      <div className="next-slide bg-primary-blue">
+      <div className={next_slide_animation}>
         <div>
-          <h3 className="white">
+          <h3 className="white slide-title" onClick={onNextHandler}>
           {electrified_page.page_class !== 'benefits' ? 'Next ' : 'Go to home '}
             <img className="right-arrow" src={RightArrowIcon} />
           </h3>

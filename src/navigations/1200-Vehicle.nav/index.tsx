@@ -15,7 +15,7 @@ function main_nav(prop: Props) {
   const { electrified_page, setMainPage } = useElectrifiedPageStore();
   const { setHighlightPage, setChargingPage, setBenefitPage, resetElectrifiedPage } = useElectrifiedPageStore();
   const { setShow } = useElectrifiedMenuStore();
-  const { checkGesture } = useGestureStore();
+  const { change, gesture, checkGesture, setChange, noChange } = useGestureStore();
   const { openPopup } = usePopupStore();
   const [ nav_animation, setNavAnimation ] = useState<string>('nav-animation');
   const [ highlight_animation, setHighlightAnimation] = useState<string>('nav-center-item-hidden');
@@ -32,6 +32,7 @@ function main_nav(prop: Props) {
     resetElectrifiedPage();
     setNext(true);
     checkGesture('');
+    setChange();
   };
 
   const onMainHandler = () => {
@@ -44,18 +45,21 @@ function main_nav(prop: Props) {
     checkGesture('highlights');
     setHighlightPage(index_arg);
     setNext(true);
+    setChange();
   }
 
   const onChargingHandler = () => {
     checkGesture('charging');
     setChargingPage(index_arg);
     setNext(true);
+    setChange();
   }
 
   const onBenefitsHandler = () => {
     checkGesture('benefits');
     setBenefitPage(index_arg);
     setNext(true);
+    setChange();
   }
 
   const on360Handler = () => {
@@ -63,6 +67,7 @@ function main_nav(prop: Props) {
     openPopup('360');
     setNext(true);
     checkGesture('');
+    noChange();
   }
 
   const onCalculationsHandler = () => {
@@ -70,6 +75,7 @@ function main_nav(prop: Props) {
     openPopup('calculator');
     setNext(true);
     checkGesture('');
+    noChange();
   }
 
   const onElectrifiedMenuHandler = () => {
@@ -77,19 +83,20 @@ function main_nav(prop: Props) {
     setShow();
     setNext(true);
     checkGesture('');
+    noChange();
   }
 
   useEffect(() => {
-    if(electrified_page.page_class === 'main') {
-      setTimeout(() => {
-        setHighlightAnimation('highlights');
-      }, 1500);
-      setTimeout(() => {
-        setChargingAnimation('charging');
-      }, 1700);
-      setTimeout(() => {
-        setBenefitsAnimation('benefits');
-      }, 1900);
+    if (gesture && change && electrified_page.page_class === 'main') {
+        setTimeout(() => {
+          setHighlightAnimation('highlights');
+        }, 1500);
+        setTimeout(() => {
+          setChargingAnimation('charging');
+        }, 1700);
+        setTimeout(() => {
+          setBenefitsAnimation('benefits');
+        }, 1900);
     }
     else {
       setNavAnimation('nav')
@@ -97,7 +104,7 @@ function main_nav(prop: Props) {
       setChargingAnimation('nav-center-item');
       setBenefitsAnimation('nav-center-item');
     }
-  }, [])
+  }, []);
 
   return (
     <>

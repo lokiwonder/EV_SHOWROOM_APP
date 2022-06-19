@@ -33,7 +33,7 @@
     padding-top: 4.63vh;
     padding-bottom: 2.78vh;
 
-    animation: bottom-to-top 0.8s;
+    animation: bottom-to-top 0.5s;
 }
 
 .description {
@@ -78,7 +78,13 @@
 .vedio_img_container-animation {
     margin-right: 2.03vw;
 
-    animation: template-1-video-img 0.7s;
+    animation: template-1-video-img 0.4s;
+}
+
+.vedio_img_container-animation2 {
+    margin-right: 2.03vw;
+
+    animation: template-1-video-img2 1.2s;
 }
 
 .img-container {

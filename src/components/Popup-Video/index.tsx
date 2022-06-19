@@ -8,7 +8,7 @@ interface Props {
 }
 
 function index(props: Props) {
-  const { video } = props;
+  // const { video } = props;
   const { electrified_page } = useElectrifiedPageStore();
   const { checkGesture } = useGestureStore();
   const { closePopup } = usePopupStore();

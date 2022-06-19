@@ -17,7 +17,7 @@ function Template_1() {
   const [comment_animation, setCommentAnimation] = useState<string>('hidden');
   const [img_Animation, setImgAnimation] = useState<string>('img-container');
   const [description_Animation, setDescriptionAnimation] = useState<string>('hidden');
-  const [video_img_animation, setVideoImgAnimation] = useState<string>('vedio_img_container');
+  const [video_img_animation, setVideoImgAnimation] = useState<string>('hidden');
 
   // description: 출력할 이미지 url control //
   const url = new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.image}`, import.meta.url).href;
@@ -39,7 +39,11 @@ function Template_1() {
         setCommentAnimation('b2 comment-animation');
         setDescriptionAnimation('b4 description-animation');
       }, 200);
-      if (electrified_page.page_present === 0) setVideoImgAnimation('vedio_img_container-animation');
+      if (electrified_page.page_present === 0)
+        setTimeout(() => {
+          setVideoImgAnimation('vedio_img_container-animation');
+        }, 300);
+      else setVideoImgAnimation('vedio_img_container-animation2');
     } else {
       setTitleAnimation('title');
       setImgAnimation('img-container');
