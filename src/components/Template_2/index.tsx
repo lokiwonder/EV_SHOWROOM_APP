@@ -16,7 +16,7 @@ function Template_2() {
       setImageAnimation('template-2-img template-2-img-animation');
       setTimeout(() => {
         setCommentAnimation('b2 template-2-comment template-2-comment-animation');
-      }, 400);
+      }, 300);
     }
     else {
       setImageAnimation('template-2-img');
