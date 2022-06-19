@@ -17,6 +17,7 @@
     "app:build:win": "tsc --noEmit && vite build && electron-builder --win --x64"
   },
   "dependencies": {
+    "@trodi/electron-splashscreen": "^1.0.2",
     "@types/ramda": "^0.28.14",
     "@types/react-router": "^5.1.9",
     "@types/react-router-dom": "^5.1.7",

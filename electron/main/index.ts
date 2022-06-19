@@ -2,12 +2,6 @@ import { app, BrowserWindow, shell } from 'electron';
 import { release } from 'os';
 import { join } from 'path';
 
-declare global {
-  interface BrowserWindow {
-    removeLoading: string;
-  }
-}
-
 // Disable GPU Acceleration for Windows 7
 if (release().startsWith('6.1')) app.disableHardwareAcceleration();
 
@@ -57,9 +51,35 @@ async function createWindow() {
     if (url.startsWith('https:')) shell.openExternal(url);
     return { action: 'deny' };
   });
+
 }
 
-app.whenReady().then(createWindow);
+app.whenReady().then(() => 
+  // const splash = new BrowserWindow({
+  //   title: 'EV Showroom',
+  //   width: 1920,
+  //   height: 1080,
+  //   // frame: false,
+  //   // fullscreen: true,
+  //   webPreferences: {
+  //     // preload: splash,
+  //     nodeIntegration: true,
+  //     contextIsolation: false,
+  //   },
+  // });
+  // if (app.isPackaged) {
+  //   splash.loadFile(join(__dirname, '../preload/splash.ts'));
+  // } else {
+  //   splash.loadFile(join(__dirname, '../../../electron/preload/splash.html'));
+  //   // win.webContents.openDevTools()
+  // }
+  //   setTimeout(() => {
+  //     splash.destroy();
+  //     createWindow();
+  //   }, 20000);
+
+    createWindow()
+);
 
 app.on('window-all-closed', () => {
   win = null;

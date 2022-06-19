@@ -18,11 +18,11 @@ let home_timeout: NodeJS.Timeout;
 const useStore = create<GestureState>((set) => ({
   gesture: true,
   change: true,
-  home: false,
+  home: true,
   checkGesture: (class_name: string) => {
-    set((state) => ({
-      home: false
-    }))
+    // set((state) => ({
+    //   home: false
+    // }))
     if (class_name !== '' && class_name !== 'main') {
       set((state) => ({
         gesture: true,
@@ -35,7 +35,7 @@ const useStore = create<GestureState>((set) => ({
           gesture: false,
         }))
       }, 10000);
-      gesture_timeout = setTimeout(() => {
+      home_timeout = setTimeout(() => {
         set((state) => ({
           home: true
         }))
