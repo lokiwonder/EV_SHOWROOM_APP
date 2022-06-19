@@ -26,7 +26,8 @@ function Template_1() {
   //        function        //
   // description: 비디오 팝업 처리를 위한 함수
   const onVideoHandler = () => {
-    checkGesture(electrified_page.page_class);
+    checkGesture('');
+    noChange();
     openPopup('video');
   };
 

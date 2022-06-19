@@ -15,5 +15,6 @@ import PopupCloseIcon from './PopupClose.png';
 import Background360 from './Background360.png';
 import PopupLeftArrowIcon from './PopupLeftArrow.png';
 import PopupRightArrowIcon from './PopupRightArrow.png';
+import TempVideo from './TempVideo.png';
 
-export { RotationIcon, BarIcon, CalculatorIcon, HomeIcon, LanguageIcon, Logo, MainBackground, MainButtonIcon, MenuIcon, MenuCloseIcon, HandNextIcon, HandPreviousIcon, RightArrowIcon, PopupCloseIcon, PopupLeftArrowIcon, PopupRightArrowIcon, Background360};
+export { RotationIcon, BarIcon, CalculatorIcon, HomeIcon, LanguageIcon, Logo, MainBackground, MainButtonIcon, MenuIcon, MenuCloseIcon, HandNextIcon, HandPreviousIcon, RightArrowIcon, PopupCloseIcon, PopupLeftArrowIcon, PopupRightArrowIcon, Background360, TempVideo};

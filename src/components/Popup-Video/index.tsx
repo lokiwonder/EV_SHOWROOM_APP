@@ -1,6 +1,6 @@
 import './style.css';
 
-import { PopupCloseIcon } from '@img';
+import { PopupCloseIcon, TempVideo } from '@img';
 import { usePopupStore, useGestureStore, useElectrifiedPageStore } from '@store';
 
 interface Props {
@@ -13,9 +13,8 @@ function index(props: Props) {
   const { checkGesture } = useGestureStore();
   const { closePopup } = usePopupStore();
 
-  const url = new URL(`/public/assets/images/IONIQ 5/1d767afa-5a2a-471a-b488-7462aa716324.png`, import.meta.url).href;
+  const url = new URL('/public/assets/images/IONIQ 5/1d767afa-5a2a-471a-b488-7462aa716324.png', import.meta.url).href;
   
-
   const onCloseHandler = () => {
     checkGesture(electrified_page.page_class);
     closePopup();
@@ -30,7 +29,7 @@ function index(props: Props) {
           </button>
         </div>
         <div className="popup-tmp-container">
-          <img className="popup-tmp-img" src={url} />
+          <img className="popup-tmp-img" src={TempVideo} />
         </div>
       </div>
     </div>
