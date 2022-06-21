@@ -4,7 +4,7 @@ li {
 
 .nav {
   width: 100vw;
-  height: 7.87vh;
+  height: 4.427vw;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.6);
   bottom: 0px;
@@ -14,7 +14,7 @@ li {
 
 .nav-animation {
   width: 100vw;
-  height: 7.87vh;
+  height: 4.427vw;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.6);
   bottom: 0px;
@@ -109,4 +109,8 @@ li {
   width: 2.22vh;
   height: 2.22vh;
   margin-left: 1.04vw;
+}
+
+.electrified-progress {
+  animation: electrified-progress-animation 1s;
 }

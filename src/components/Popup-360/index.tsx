@@ -15,6 +15,7 @@ function index() {
 
   const [bg_animation, setBgAnimation] = useState<string>('hidden');
   const [content_animation, setContentAnimation] = useState<string>('hidden');
+  const [image_style, setImageStyle] = useState<string>('hidden');
 
   const i = R.findIndex(R.propEq('electrified_item_name', selected_electrified))(electrifies);
   const electrified = electrifies[i];
@@ -27,9 +28,10 @@ function index() {
     setTimeout(() => {
       setContentAnimation('hidden');
       setBgAnimation('hidden');
+      setImageStyle('hidden');
       checkGesture(electrified_page.page_class);
       closePopup();
-    }, 500);
+    }, 480);
   } 
   const url = new URL(`/public/assets/images/${selected_electrified}/${electrified.rotation_image}`, import.meta.url).href;
   
@@ -37,6 +39,7 @@ function index() {
     setBgAnimation('popup-360-bg-open');
     setTimeout(() => {
       setContentAnimation('popup-360-container-open');
+      setImageStyle('popup-360-contents-img');
     }, 200)
   }, [])
   
@@ -51,7 +54,7 @@ function index() {
         </div>
         <div className="popup-360-contents-container">
           <button><img className="popup-360-contents-btn" src={PopupLeftArrowIcon} /></button>
-          <img className="popup-360-contents-img" src={url}></img>
+          <img className={image_style} src={url}></img>
           <button><img className="popup-360-contents-btn" src={PopupRightArrowIcon} /></button>
         </div>
       </div>

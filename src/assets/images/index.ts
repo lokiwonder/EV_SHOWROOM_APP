@@ -1,8 +1,11 @@
 import RotationIcon from './360.png';
 import BarIcon from './Bar.png';
+import BottomArrowIcon from './BottomArrow.png';
 import CalculatorIcon from './calculator.png';
 import HomeIcon from './Home.png';
+import HyundaiLogo2 from './HyundaiLogo2.png';
 import LanguageIcon from './Language.png';
+import LanguageActiveIcon from './LanguageActiveIcon.png';
 import Logo from './Logo.png';
 import MainBackground from './MainBackground.png';
 import MainButtonIcon from './MainButton.png';
@@ -16,5 +19,6 @@ import Background360 from './Background360.png';
 import PopupLeftArrowIcon from './PopupLeftArrow.png';
 import PopupRightArrowIcon from './PopupRightArrow.png';
 import TempVideo from './TempVideo.png';
+import TopArrowWhiteIcon from './TopArrowWhite.png';
 
-export { RotationIcon, BarIcon, CalculatorIcon, HomeIcon, LanguageIcon, Logo, MainBackground, MainButtonIcon, MenuIcon, MenuCloseIcon, HandNextIcon, HandPreviousIcon, RightArrowIcon, PopupCloseIcon, PopupLeftArrowIcon, PopupRightArrowIcon, Background360, TempVideo};
+export { RotationIcon, BarIcon, BottomArrowIcon, CalculatorIcon, HomeIcon, HyundaiLogo2, LanguageIcon, LanguageActiveIcon, Logo, MainBackground, MainButtonIcon, MenuIcon, MenuCloseIcon, HandNextIcon, HandPreviousIcon, RightArrowIcon, PopupCloseIcon, PopupLeftArrowIcon, PopupRightArrowIcon, Background360, TempVideo, TopArrowWhiteIcon};

@@ -25,8 +25,8 @@ async function createWindow() {
     title: 'EV Showroom',
     width: 1920,
     height: 1080,
-    frame: false,
-    fullscreen: true,
+    // frame: false,
+    // fullscreen: true,
     webPreferences: {
       // preload: splash,
       nodeIntegration: true,
@@ -40,6 +40,22 @@ async function createWindow() {
     win.loadURL(url);
     // win.webContents.openDevTools()
   }
+
+  // if(load) {
+  //   if (app.isPackaged) {
+  //     win.loadFile(join(__dirname, '../../index.html'));
+  //   } else {
+  //     win.loadURL(url);
+  //     // win.webContents.openDevTools()
+  //   }
+  // } else {
+  //   if (app.isPackaged) {
+  //     win.loadFile(join(__dirname, '../preload/splash.html'));
+  //   } else {
+  //     win.loadFile(join(__dirname, '../../../electron/preload/splash.html'));
+  //     // win.webContents.openDevTools()
+  //   }
+  // }
 
   // Test active push message to Renderer-process
   win.webContents.on('did-finish-load', () => {
@@ -55,30 +71,39 @@ async function createWindow() {
 }
 
 app.whenReady().then(() => 
-  // const splash = new BrowserWindow({
-  //   title: 'EV Showroom',
-  //   width: 1920,
-  //   height: 1080,
-  //   // frame: false,
-  //   // fullscreen: true,
-  //   webPreferences: {
-  //     // preload: splash,
-  //     nodeIntegration: true,
-  //     contextIsolation: false,
-  //   },
-  // });
-  // if (app.isPackaged) {
-  //   splash.loadFile(join(__dirname, '../preload/splash.ts'));
-  // } else {
-  //   splash.loadFile(join(__dirname, '../../../electron/preload/splash.html'));
-  //   // win.webContents.openDevTools()
-  // }
+{
+  const splash = new BrowserWindow({
+    title: 'EV Showroom',
+    width: 1920,
+    height: 1080,
+    frame: false,
+    // fullscreen: true,
+    webPreferences: {
+      // preload: splash,
+      nodeIntegration: true,
+      contextIsolation: false,
+    },
+  });
+  if (app.isPackaged) {
+    splash.loadFile(join(__dirname, '../preload/splash.html'));
+  } else {
+    splash.loadFile(join(__dirname, '../../../electron/preload/splash.html'));
+    // win.webContents.openDevTools()
+  }
+  setTimeout(() => {
+    createWindow();
+    // splash.destroy();
+    setTimeout(() => {
+      splash.destroy();
+    }, 2000)
+  }, 3000);
+}
+  // {
+  //   createWindow(false);
   //   setTimeout(() => {
-  //     splash.destroy();
-  //     createWindow();
-  //   }, 20000);
-
-    createWindow()
+  //     createWindow(true);
+  //   }, 3000);
+  // }
 );
 
 app.on('window-all-closed', () => {
@@ -100,5 +125,9 @@ app.on('activate', () => {
     allWindows[0].focus();
   } else {
     createWindow();
+    // createWindow(false);
+    // setTimeout(() => {
+    //   createWindow(true);
+    // }, 3000);
   }
 });

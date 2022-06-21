@@ -6,22 +6,22 @@ import './style.css';
 function Template_2() {
   const { electrified_page } = useElectrifiedPageStore();
   const { selected_electrified } = useElectrifiedSelectStore();
-  const { gesture, change, setChange } = useGestureStore();
+  const { gesture, change } = useGestureStore();
 
-  const [img_animation, setImageAnimation] = useState<string>('template-2-img');
+  const [img_animation, setImageAnimation] = useState<string>('hidden');
   const [commnet_animation, setCommentAnimation] = useState<string>('display-none');
 
   useEffect(() => {
-    if(gesture && change) {
-      setImageAnimation('template-2-img template-2-img-animation');
-      setTimeout(() => {
-        setCommentAnimation('b2 template-2-comment template-2-comment-animation');
-      }, 300);
-    }
-    else {
-      setImageAnimation('template-2-img');
-      setCommentAnimation('b2 template-2-comment')
-    }
+      if(gesture && change) {
+        setImageAnimation('template-2-img template-2-img-animation');
+        setTimeout(() => {
+          setCommentAnimation('b2 template-2-comment template-2-comment-animation');
+        }, 300);
+      }
+      else {
+        setImageAnimation('template-2-img');
+        setCommentAnimation('b2 template-2-comment')
+      }
   }, [])
 
   return (

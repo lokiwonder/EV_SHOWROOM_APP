@@ -35,9 +35,8 @@ function main() {
   //                function                //
   //                function                //
   // description: 클릭시 화면 제스쳐
-  const onActionHandler = () => {
-    checkGesture(electrified_page.page_class);
-  };
+  // const onActionHandler = () => checkGesture(electrified_page.page_class);
+  
 
   // description: 화면을 눌렀을 때 (때지 않음)
   const touchStart = (e: MouseEvent<HTMLDivElement>) => (mouseX = e.clientX);
@@ -45,6 +44,8 @@ function main() {
   // todo: 훅으로 전환
   // description: 화면에서 땠을 때
   const touchEnd = (e: MouseEvent<HTMLDivElement>) => {
+    // description: popup 상태에서는 화면전환 막음
+    if (popup !== '') return;
     // description: 오른쪽에서 왼쪽으로
     if (mouseX >= window.innerWidth / 2) {
       // description: 다음 화면으로 이동
@@ -149,7 +150,7 @@ function main() {
   const ElectrifiedMainComponent = () => {
     const [title_animation, setTitleAnimation] = useState<string>('display-none');
     const [sub_animation, setSubAnimation] = useState<string>('display-none');
-    const [img_animation, setImgAnimation] = useState<string>('vehicle-main-img');
+    const [img_animation, setImgAnimation] = useState<string>('hidden');
 
     useEffect(() => {
       if(gesture && change) {
@@ -172,6 +173,7 @@ function main() {
         }
       }
       else {
+        setImgAnimation('vehicle-main-img');
         if(selected_electrified == 'KONA Electric') {
           setTitleAnimation('white');
           setSubAnimation('b2 white');
@@ -200,7 +202,7 @@ function main() {
   // description:
   const ElectrifiedContentsComponent = () => {
     return (
-      <div onMouseDown={touchStart} onMouseUp={touchEnd} onClick={onActionHandler}>
+      <div onMouseDown={touchStart} onMouseUp={touchEnd}>
         {!next && <NextSlideComponent />}
         {!gesture && <GesturePopupComponent />}
         {electrified_page.page.type === 'template_1' && <Template_1 />}
@@ -271,7 +273,7 @@ function main() {
   // description:
   const GesturePopupComponent = () => {
     return (
-      <div className="gesture-guide">
+      <div className="gesture-guide" onClick={() => checkGesture(electrified_page.page_class)}>
         <span className="gesture-box">
           <img className="gesture-img gesture-img-prev" src={HandPreviousIcon} />
           <p className="b1 white gesture-prev">Previous</p>

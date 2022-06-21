@@ -12,7 +12,7 @@ function Menu() {
   const { electrified_page, setMainPage } = useElectrifiedPageStore();
   const { electrifies } = useElectrifiedStore();
   const { checkGesture, noChange, setChange } = useGestureStore();
-  const [menu_animation, setMenuAnimations] = useState<string>('menu-background-open');
+  const [menu_animation, setMenuAnimations] = useState<string>('hidden');
 
   const onSelectHandler = (electrified_name: string) => {
     setMenuAnimations('menu-background-close');
@@ -26,7 +26,7 @@ function Menu() {
       setMainPage(arg);
       setHide();
       setChange();
-    }, 600);
+    }, 580);
   };
 
   const onCloseHandler = () => {
@@ -36,11 +36,11 @@ function Menu() {
       noChange();
       setHide();
       setMenuAnimations('menu-background-open');
-    }, 600);
+    }, 580);
   };
 
   useEffect(() => {
-    // setMenuAnimations('menu-background-open');
+    setMenuAnimations('menu-background-open');
     setTimeout(() => {}, 600);
   }, []);
 

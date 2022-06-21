@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.min.js"></script>
+    <title>Document</title>
 </head>
 <style>
     ::-webkit-scrollbar {
@@ -15,22 +14,26 @@
     body {
         background-color: #002c5f;
     }
-</style>
 
+    .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    lottie-player {
+        flex: 1;
+        width: 26.354vw;
+        height: 8.229vw;
+    }
+</style>
 <body>
     <div class="container">
-        <div class="lottie"></div>
-	</div>
-
-    <script>
-        lottie.loadAnimation({
-            container: document.getElementById("lottie"),
-            renderer: "svg",
-            loop:true,
-            autoplay: true,
-            path: "https://assets7.lottiefiles.com/packages/lf20_pjaextie.json"
-        })
-    </script>
+        <lottie-player src="lottie_ev_logo2.json" background="transparent" speed="1" autoplay>
+        </lottie-player>
+        </div>
+    <script src="./js/lottie-player.js"></script>
 </body>
-
 </html>

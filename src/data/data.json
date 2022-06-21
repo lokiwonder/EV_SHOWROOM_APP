@@ -115,7 +115,7 @@
                             "comment": "Plug in your IONIQ Electric overnight,\nand wake up to a fully charged battery.",
                             "description": "",
                             "image": "585cc1b8-b38f-4649-88d1-e53a413ba56e.png",
-                            "video": "~.mp4",
+                            "video": "HyundaiEVQ_Costs.mp4",
                             "video_image": "b1d14332-45d7-4088-8cd5-cd0d6edb81df.png"
                         },
                         {
@@ -126,7 +126,7 @@
                             "comment": "One less stop to worry about after work.\nA growing number of companies are offering\ncharging stations.",
                             "description": "",
                             "image": "4d18ea70-e7b6-4663-a224-ac800b45fd84.png",
-                            "video": "~.mp4",
+                            "video": "HyundaiEVQ_Costs.mp4",
                             "video_image": "b1d14332-45d7-4088-8cd5-cd0d6edb81df.png"
                         },
                         {
@@ -137,7 +137,7 @@
                             "comment": "Hyundai’s Charging Station Finder shows you\nreal-time charging station information\nsuch as location connector types,\nand availability on the Bluelink® app on your phone and on your cars navigation display.",
                             "description": "",
                             "image": "6d1ec439-1002-4897-82d8-cde92fde567b.png",
-                            "video": "~.mp4",
+                            "video": "HyundaiEVQ_Costs.mp4",
                             "video_image": "b1d14332-45d7-4088-8cd5-cd0d6edb81df.png"
                         }
                     ],
@@ -150,7 +150,7 @@
                             "comment": "IONIQ 5 is not only a zero emissions vehicle: often the cost of operation is lower compared to combustion counterparts, especially if you charge it at home.*",
                             "description": "*The relative operational costs of this vehicle compared to one with an internal combustion engine can vary depending on energy prices and which ICE is being compared.",
                             "image": "00d2f590-a2a6-4865-b8c8-e5cdcc286ea3.png",
-                            "video": "~.mp4",
+                            "video": "",
                             "video_image": ""
                         },
                         {
@@ -161,7 +161,7 @@
                             "comment": "Charge up to 80% in 18 minutes.\nGain 100km range in 5 minutes.",
                             "description": "*0 to 100km/h acceleration in 7.9 seconds for the 64kWh battery version and 9.9 seconds for 39.2kWh version. Range according to WLTP cycle. Driving range may vary slightly depending on road conditions, your driving style and the temperature. it is also dependent on the type of tyres equipped.",
                             "image": "f6f55c2b-9f10-41d3-b406-31d365d6849c.png",
-                            "video": "~.mp4",
+                            "video": "",
                             "video_image": ""
                         },
                         {
@@ -172,7 +172,7 @@
                             "comment": "With Hyundai’s cutting-edge smart tech,\nthe launch version of IONIQ 5 with all-wheel drive delivers a range up to 481 km*.",
                             "description": "*0 to 100km/h acceleration in 7.9 seconds for the 64kWh battery version and 9.9 seconds for 39.2kWh version. Range according to WLTP cycle. Driving range may vary slightly depending on road conditions, your driving style and the temperature. it is also dependent on the type of tyres equipped.",
                             "image": "5c0fc943-1595-4048-83ff-7ff2728a0c88.png",
-                            "video": "~.mp4",
+                            "video": "",
                             "video_image": ""
                         },
                         {
@@ -183,7 +183,7 @@
                             "comment": "While an internal combustion engine contains hundreds of moving parts,\nan electric motor only needs around\nhalf a dozen, significantly reducing\nthe probability of something breaking.\nThere is no need for oil changes, either. ",
                             "description": "",
                             "image": "7fd53338-e0fd-4062-9993-91aade080488.png",
-                            "video": "~.mp4",
+                            "video": "",
                             "video_image": ""
                         }
                     ]
@@ -292,11 +292,6 @@
                             "sequence_number": 6,
                             "type": "template_3",
                             "image": "da98bd32-e742-4e90-8f42-772ed56e751e.png"
-                        },
-                        {
-                            "sequence_number": 7,
-                            "type": "template_3",
-                            "image": "2918eeba-e44f-4055-b45c-f6adee6b38a8.png"
                         }
                     ],
                     "charging": [
@@ -308,7 +303,7 @@
                             "comment": "Plug in your IONIQ Electric overnight,\nand wake up to a fully charged battery.",
                             "description": "",
                             "image": "23841202-865c-4639-8db6-627e549e2c54.png",
-                            "video": "~.mp4",
+                            "video": "HyundaiEVQ_Costs.mp4",
                             "video_image": "b1d14332-45d7-4088-8cd5-cd0d6edb81df.png"
                         },
                         {
@@ -319,7 +314,7 @@
                             "comment": "One less stop to worry about after work.\nA growing number of companies are offering\ncharging stations.",
                             "description": "",
                             "image": "7dc1c57c-0a6b-4022-97c9-fee864c52f11.png",
-                            "video": "~.mp4",
+                            "video": "HyundaiEVQ_Costs.mp4",
                             "video_image": "b1d14332-45d7-4088-8cd5-cd0d6edb81df.png"
                         },
                         {
@@ -330,7 +325,7 @@
                             "comment": "Hyundai’s Charging Station Finder shows you\nreal-time charging station information\nsuch as location connector types,\nand availability on the Bluelink® app on your phone and on your cars navigation display.",
                             "description": "",
                             "image": "da0e5921-bbee-4cd8-9fad-03265babcebc.png",
-                            "video": "~.mp4",
+                            "video": "HyundaiEVQ_Costs.mp4",
                             "video_image": "b1d14332-45d7-4088-8cd5-cd0d6edb81df.png"
                         }
                     ],
@@ -343,7 +338,7 @@
                             "comment": "IONIQ 5 is not only a zero emissions vehicle: often the cost of operation is lower compared to combustion counterparts, especially if you charge it at home.*",
                             "description": "*The relative operational costs of this vehicle compared to one with an internal combustion engine can vary depending on energy prices and which ICE is being compared.",
                             "image": "b3b59cdb-133f-47c9-a80e-f9929643ff56.png",
-                            "video": "~.mp4",
+                            "video": "",
                             "video_image": ""
                         },
                         {
@@ -354,7 +349,7 @@
                             "comment": "Charge up to 80% in 18 minutes.\nGain 100km range in 5 minutes.",
                             "description": "*0 to 100km/h acceleration in 7.9 seconds for the 64kWh battery version and 9.9 seconds for 39.2kWh version. Range according to WLTP cycle. Driving range may vary slightly depending on road conditions, your driving style and the temperature. it is also dependent on the type of tyres equipped.",
                             "image": "69728ef1-3b52-4018-8d4e-7f2f71ead72c.png",
-                            "video": "~.mp4",
+                            "video": "",
                             "video_image": ""
                         },
                         {
@@ -365,7 +360,7 @@
                             "comment": "With Hyundai’s cutting-edge smart tech,\nthe launch version of IONIQ 5 with all-wheel drive delivers a range up to 481 km*.",
                             "description": "*0 to 100km/h acceleration in 7.9 seconds for the 64kWh battery version and 9.9 seconds for 39.2kWh version. Range according to WLTP cycle. Driving range may vary slightly depending on road conditions, your driving style and the temperature. it is also dependent on the type of tyres equipped.",
                             "image": "6c61f3aa-b212-45d9-9686-305ff050a7e5.png",
-                            "video": "~.mp4",
+                            "video": "",
                             "video_image": ""
                         },
                         {
@@ -376,7 +371,7 @@
                             "comment": "While an internal combustion engine contains hundreds of moving parts,\nan electric motor only needs around\nhalf a dozen, significantly reducing\nthe probability of something breaking.\nThere is no need for oil changes, either. ",
                             "description": "",
                             "image": "a47acb41-b290-4511-8d0e-f9ab4742ff5e.png",
-                            "video": "~.mp4",
+                            "video": "",
                             "video_image": ""
                         }
                     ]
@@ -472,7 +467,7 @@
                             "comment": "Plug in your IONIQ Electric overnight,\nand wake up to a fully charged battery.",
                             "description": "",
                             "image": "aa7bb8e8-ee40-4a2d-936a-3bfc7a2c9ad7.png",
-                            "video": "~.mp4",
+                            "video": "HyundaiEVQ_Costs.mp4",
                             "video_image": "b1d14332-45d7-4088-8cd5-cd0d6edb81df.png"
                         },
                         {
@@ -483,7 +478,7 @@
                             "comment": "One less stop to worry about after work.\nA growing number of companies are offering\ncharging stations.",
                             "description": "",
                             "image": "c1736adb-170e-4d83-b5fb-be9ab5571919.png",
-                            "video": "~.mp4",
+                            "video": "HyundaiEVQ_Costs.mp4",
                             "video_image": "b1d14332-45d7-4088-8cd5-cd0d6edb81df.png"
                         },
                         {
@@ -494,7 +489,7 @@
                             "comment": "Hyundai’s Charging Station Finder shows you\nreal-time charging station information\nsuch as location connector types,\nand availability on the Bluelink® app on your phone and on your cars navigation display.",
                             "description": "",
                             "image": "8747bd77-23c1-432a-b56d-454ef4c49aee.png",
-                            "video": "~.mp4",
+                            "video": "HyundaiEVQ_Costs.mp4",
                             "video_image": "b1d14332-45d7-4088-8cd5-cd0d6edb81df.png"
                         }
                     ],
@@ -507,7 +502,7 @@
                             "comment": "IONIQ 5 is not only a zero emissions vehicle: often the cost of operation is lower compared to combustion counterparts, especially if you charge it at home.*",
                             "description": "*The relative operational costs of this vehicle compared to one with an internal combustion engine can vary depending on energy prices and which ICE is being compared.",
                             "image": "cd7940ff-4e2d-42b2-b195-368866f55ba6.png",
-                            "video": "~.mp4",
+                            "video": "",
                             "video_image": ""
                         },
                         {
@@ -518,7 +513,7 @@
                             "comment": "Charge up to 80% in 18 minutes.\nGain 100km range in 5 minutes.",
                             "description": "*0 to 100km/h acceleration in 7.9 seconds for the 64kWh battery version and 9.9 seconds for 39.2kWh version. Range according to WLTP cycle. Driving range may vary slightly depending on road conditions, your driving style and the temperature. it is also dependent on the type of tyres equipped.",
                             "image": "c01aac83-bf11-4dcf-8a40-ef6987ff67c3.png",
-                            "video": "~.mp4",
+                            "video": "",
                             "video_image": ""
                         },
                         {
@@ -529,7 +524,7 @@
                             "comment": "With Hyundai’s cutting-edge smart tech,\nthe launch version of IONIQ 5 with all-wheel drive delivers a range up to 481 km*.",
                             "description": "*0 to 100km/h acceleration in 7.9 seconds for the 64kWh battery version and 9.9 seconds for 39.2kWh version. Range according to WLTP cycle. Driving range may vary slightly depending on road conditions, your driving style and the temperature. it is also dependent on the type of tyres equipped.",
                             "image": "8a27648f-2fad-4cf4-ac36-43abecaa5928.png",
-                            "video": "~.mp4",
+                            "video": "",
                             "video_image": ""
                         },
                         {
@@ -540,7 +535,7 @@
                             "comment": "While an internal combustion engine contains hundreds of moving parts,\nan electric motor only needs around\nhalf a dozen, significantly reducing\nthe probability of something breaking.\nThere is no need for oil changes, either. ",
                             "description": "",
                             "image": "0d9b411e-1f55-4013-8d19-d85025dc1b1c.png",
-                            "video": "~.mp4",
+                            "video": "",
                             "video_image": ""
                         }
                     ]

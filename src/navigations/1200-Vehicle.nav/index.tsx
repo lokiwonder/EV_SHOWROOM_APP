@@ -39,6 +39,7 @@ function main_nav(prop: Props) {
     checkGesture('main');
     setMainPage(index_arg);
     setNext(true);
+    setChange();
   };
 
   const onHighlightsHandler = () => {
@@ -108,7 +109,7 @@ function main_nav(prop: Props) {
 
   return (
     <>
-      {electrified_page.page_class !== '' && electrified_page.page_class !== 'main' && <progress value={electrified_page.page_present + 1} max={electrified_page.page_length}></progress>}
+      {electrified_page.page_class !== '' && electrified_page.page_class !== 'main' && <progress className="electrified-progress" value={electrified_page.page_present + 1} max={electrified_page.page_length}></progress>}
       <nav className={nav_animation}>
         <div className="nav-left">
           <button onClick={onHomeHandler}>

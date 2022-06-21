@@ -1,7 +1,7 @@
 // react-library
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // screens | components
-import { VehicleMainView } from '@screen';
+import { VehicleMainView, SelectCountryView } from '@screen';
 // stores
 import { useSettingStore } from '@store';
 
@@ -27,8 +27,10 @@ function App() {
   return (
     <Router>
       {/* // description: 초기 설정 화면 */}
-      <></>
+      {/* <SelectCountryView /> */}
+      
       {/* // description: vehicles view */}
+      {/* <VehicleMainView /> */}
       <VehicleMainView />
       {/* // todo: powertrain view */}
       <></>

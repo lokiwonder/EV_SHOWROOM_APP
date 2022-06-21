@@ -210,6 +210,10 @@ progress {
   display: none;
 }
 
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
 /* display flex */
 .fx {
   display: flex;
@@ -399,7 +403,6 @@ progress {
     opacity: 0;
   }
   12.5% {
-    opacity: 0;
   }
   62.5% {
     clip-path: inset(0px 0% 0px 0px);
@@ -506,5 +509,77 @@ progress {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes electrified-progress-animation {
+  100% {
+    clip-path: inset(0px 0% 0px 0px);
+  }
+}
+
+@keyframes video-popup-open-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes video-popup-close-animation {
+  from {
+    /* transform: scale(1);
+    opacity: 1;
+    border-radius: 0%; */
+  }
+  to {
+    /* transform-origin: 30.15625vw 74.259vh; */
+    transform: scale(0.15);
+    opacity: 0;
+  }
+}
+
+@keyframes video_img-open-animation {
+  100% {
+    transform: scale(2) translate(80%, -80%);
+    opacity: 0.7;
+  }
+}
+
+@keyframes language-open-animation {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes language-close-animation {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(150%);
+  }
+}
+
+@keyframes video-popup-close-btn-open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes video-popup-close-btn-close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

@@ -34,12 +34,12 @@ const useStore = create<GestureState>((set) => ({
           change: false,
           gesture: false,
         }))
-      }, 10000);
+      }, 120000);
       home_timeout = setTimeout(() => {
         set((state) => ({
           home: true
         }))
-      }, 15000);
+      }, 150000);
     } else {
       clearTimeout(gesture_timeout);
       clearTimeout(home_timeout);

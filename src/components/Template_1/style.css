@@ -115,3 +115,7 @@
     width: 52.64vw;
     height: 45.3125vw;
 }
+
+.video_img-open-animation {
+    animation:  video_img-open-animation 0.8s forwards;
+}

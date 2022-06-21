@@ -15,7 +15,7 @@
 }
 
 .template-2-img-animation {
-  animation: template_2_img 0.8s;
+  animation: template_2_img 0.6s;
   animation-timing-function: cubic-bezier(0.7, 0, 0.84, 0);
 }
 
@@ -26,6 +26,6 @@
 }
 
 .template-2-comment-animation {
-  animation: template_2_comment 0.5s;
+  animation: template_2_comment 0.3s;
   animation-timing-function: cubic-bezier(0.7, 0, 0.84, 0);
 }

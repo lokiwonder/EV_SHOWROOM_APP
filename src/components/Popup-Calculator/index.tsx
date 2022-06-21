@@ -15,6 +15,7 @@ function index() {
 
   const [bg_animation, setBgAnimation] = useState<string>('hidden');
   const [content_animation, setContentAnimation] = useState<string>('hidden');
+  const [image_style, setImageStyle] = useState<string>('hidden');
 
   const i = R.findIndex(R.propEq('electrified_item_name', selected_electrified))(electrifies);
   const electrified = electrifies[i];
@@ -28,15 +29,17 @@ function index() {
     setTimeout(() => {
       setContentAnimation('hidden');
       setBgAnimation('hidden');
+      setImageStyle('hidden');
       checkGesture(electrified_page.page_class);
       closePopup();
-    }, 500);
+    }, 480);
   } 
 
   useEffect(() => {
     setBgAnimation('popup-calculator-bg-open');
     setTimeout(() => {
       setContentAnimation('popup-calculator-container-open bg-light-sand');
+      setImageStyle('popup-calculator-contents-img');
     }, 200)
   }, [])
 
