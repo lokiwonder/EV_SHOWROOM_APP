@@ -1,3 +1,5 @@
+import { ChangeEvent } from 'react';
+
 import * as R from 'ramda';
 
 import './style.css';
@@ -16,6 +18,7 @@ function index() {
   const [bg_animation, setBgAnimation] = useState<string>('hidden');
   const [content_animation, setContentAnimation] = useState<string>('hidden');
   const [image_style, setImageStyle] = useState<string>('hidden');
+  const [range_value, setRangeVale] = useState<number>(0);
 
   const i = R.findIndex(R.propEq('electrified_item_name', selected_electrified))(electrifies);
   const electrified = electrifies[i];
@@ -33,14 +36,18 @@ function index() {
       checkGesture(electrified_page.page_class);
       closePopup();
     }, 480);
-  } 
+  }
+
+  const onRangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    setRangeVale(Number(e.currentTarget.value));
+  }
 
   useEffect(() => {
     setBgAnimation('popup-calculator-bg-open');
     setTimeout(() => {
       setContentAnimation('popup-calculator-container-open bg-light-sand');
       setImageStyle('popup-calculator-contents-img');
-    }, 200)
+    }, 200);
   }, [])
 
   return (
@@ -61,7 +68,10 @@ function index() {
           <img className="popup-calculator-contents-img" src={url} />
           <div className="popup-calculator-contents-range-box">
             <h6 className="primary-blue">0 km</h6>
-            <input min={0} max={300} step={10} className="popup-calculator-contents-range bg-active-blue" type="range" />
+            <label className="range-label">
+              <span className="range-bubble h6 primary-blue" style={{ position: 'absolute', width: '1.875vw', top: '-1.5625vw', left: `${range_value / 300 * (40.3125 - 1.875)}vw`, textAlign: 'center' }}>{range_value}</span>
+              <input min={0} max={300} value={range_value} step={10} onChange={onRangeHandler} className="popup-calculator-contents-range bg-active-blue" type="range" />
+            </label>
             <h6 className="primary-blue">300 km</h6>
           </div>
           <h5 className="popup-calculator-contents-subtitle">Your average distance per day</h5>

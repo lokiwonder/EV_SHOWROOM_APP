@@ -18,7 +18,7 @@
     opacity: 0.7;
     background-color: #000000;
 
-    animation: common_popup-open 0.6s;
+    /* animation: common_popup-open 0.6s; */
 }
 
 .popup-video-close-animation {
@@ -59,7 +59,7 @@
 }
 
 .popup-close-btn-open-animation {
-    animation: video-popup-close-btn-open 1s;
+    /* animation: video-popup-close-btn-open 1s; */
 }
 
 .popup-close-btn-close-animation {
@@ -77,7 +77,7 @@
 
 .popup-media-open {
     display: inline-block;
-    animation: common_popup-open 0.6s;
+    /* animation: common_popup-open 0.6s; */
 }
 
 .popup-media-close {

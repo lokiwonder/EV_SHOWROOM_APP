@@ -28,10 +28,10 @@ function App() {
     <Router>
       {/* // description: 초기 설정 화면 */}
       {/* <SelectCountryView /> */}
-      
+      { setting.app_id === '' ? (<SelectCountryView />) : (<VehicleMainView />) }
       {/* // description: vehicles view */}
       {/* <VehicleMainView /> */}
-      <VehicleMainView />
+      
       {/* // todo: powertrain view */}
       <></>
       {/* // todo: connectivity view */}

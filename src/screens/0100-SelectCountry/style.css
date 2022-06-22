@@ -13,10 +13,17 @@
     align-items: center;
   }
 
-  .hyundai-logo {
-    margin-top: 39.815vh;
-    margin-bottom: 2.778vh;
-    width: 11.227vw;
+  .showroom-logo {
+    padding-top: 39.815vh;
+    padding-bottom: 2.778vh;
+  }
+
+  .select-nav-logo {
+    position: absolute;
+    bottom: 2.924vh;
+    left: 2.34375vw;
+    width: 10.26vw;
+    height: 1.428125vw;
   }
 
   .country-selector {
@@ -26,9 +33,26 @@
     border-radius: 4px 4px 0px 0px;
     border-radius: 4px;
 
+    box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.5);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .selector-box {
+    width: 26.05vw;
+    max-height: 83.333vh;
+    overflow-y: auto;
+    background-color: #FFFFFF;
+    border-top: 1px solid #EEEEEE;
+    border-radius: 4px 4px 4px 4px;
+
+    box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  .selector-box::-webkit-scrollbar {
+    display: inline;
   }
 
   .selector-box>ul {
@@ -59,19 +83,6 @@
     padding-right: 1.82vw;
   }
 
-  .selector-box {
-    width: 26.05vw;
-    max-height: 37.037vh;
-    overflow-y: auto;
-    background-color: #FFFFFF;
-    border-top: 1px solid #EEEEEE;
-    border-radius: 0px 0px 4px 4px;
-  }
-
-  .selector-box::-webkit-scrollbar {
-    display: inline;
-  }
-
   .flag-image {
     width: 2.23vw;
     height: 1.5625vw;
@@ -89,6 +100,32 @@
   }
 
   .confirm-button {
-    width: 26.05vw;
-    height: 4.17vw;
+    position: absolute;
+    width: 9.8958vw;
+    height: 3.6458vw;
+    border: 2px solid #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 4px; 
+    right: 2.34375vw;
+    bottom: 2.7778vh;
+
+    font-family: 'Hyundai Sans Head Medium';
+    font-weight: 500;
+    font-size: 2.222vh;
+    line-height: 2.7778vh;
+  }
+
+  .select-country-nav {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .selector-box-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

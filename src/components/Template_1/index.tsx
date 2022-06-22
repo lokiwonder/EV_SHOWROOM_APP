@@ -18,7 +18,7 @@ function Template_1() {
   const [img_Animation, setImgAnimation] = useState<string>('hidden');
   const [description_Animation, setDescriptionAnimation] = useState<string>('hidden');
   const [video_img_animation, setVideoImgAnimation] = useState<string>('hidden');
-  const [video_animation, setVideoAnimation] = useState<string>('video_img');
+  const [video_thumb_animation, setVideoThumbAnimation] = useState<string>('video-thumb-img');
 
   // description: 출력할 이미지 url control //
   const url = new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.image}`, import.meta.url).href;
@@ -27,9 +27,13 @@ function Template_1() {
   //        function        //
   // description: 비디오 팝업 처리를 위한 함수
   const onVideoHandler = () => {
-    openPopup('video');
-    checkGesture('');
-    noChange();
+    setVideoThumbAnimation('video-thumb-img-open');
+    setTimeout(() => {
+      openPopup('video');
+      checkGesture('');
+
+      noChange();
+    }, 780);
   };
 
   // description: 애니메이션 효과 처리
@@ -49,8 +53,7 @@ function Template_1() {
           setDescriptionAnimation('b4 description-animation');
         }, 200);
         if (electrified_page.page_present === 0) setTimeout(() => setVideoImgAnimation('vedio_img_container-animation'), 300);
-      }
-      else setVideoImgAnimation('vedio_img_container-animation2');
+      } else setVideoImgAnimation('vedio_img_container-animation2');
     } else {
       setTitleAnimation('title');
       setImgAnimation('img-container');
@@ -87,7 +90,7 @@ function Template_1() {
             <div className={video_img_animation}>
               <h6 className="primary-blue">How to charge</h6>
               <button onClick={onVideoHandler}>
-                <img className={video_animation} src={new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.video_image}`, import.meta.url).href} />
+                <img className={video_thumb_animation} src={new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.video_image}`, import.meta.url).href} />
               </button>
             </div>
           )}

@@ -5,6 +5,8 @@ import './style.css';
 import { RotationIcon, BarIcon, CalculatorIcon, HomeIcon, MenuIcon } from '@img';
 import { useEffect, useState } from 'react';
 
+import { Popup_360, Popup_Calculator } from '@components';
+
 interface Props {
   setNext: (next: boolean) => void;
 }
@@ -17,6 +19,7 @@ function main_nav(prop: Props) {
   const { setShow } = useElectrifiedMenuStore();
   const { change, gesture, checkGesture, setChange, noChange } = useGestureStore();
   const { openPopup } = usePopupStore();
+  const { popup } = usePopupStore();
   const [ nav_animation, setNavAnimation ] = useState<string>('nav-animation');
   const [ highlight_animation, setHighlightAnimation] = useState<string>('nav-center-item-hidden');
   const [ charging_animation, setChargingAnimation] = useState<string>('nav-center-item-hidden');

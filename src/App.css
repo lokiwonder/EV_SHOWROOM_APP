@@ -132,6 +132,48 @@ h6 {
   line-height: 1.2875vw;
 }
 
+.h1 {
+  font-family: 'Hyundai Sans Head Medium';
+  font-weight: 500;
+  font-size: 5.21vw;
+  line-height: 6.4375vw;
+}
+
+.h2 {
+  font-family: 'Hyundai Sans Head Medium';
+  font-weight: 500;
+  font-size: 3.125vw;
+  line-height: 3.8625vw;
+}
+
+.h3 {
+  font-family: 'Hyundai Sans Head Medium';
+  font-weight: 500;
+  font-size: 2.34375vw;
+  line-height: 2.896875vw;
+}
+
+.h4 {
+  font-family: 'Hyundai Sans Head Medium';
+  font-weight: 500;
+  font-size: 1.82vw;
+  line-height: 2.253125vw;
+}
+
+.h5 {
+  font-family: 'Hyundai Sans Head Medium';
+  font-weight: 500;
+  font-size: 1.5625vw;
+  line-height: 1.93125vw;
+}
+
+.h6 {
+  font-family: 'Hyundai Sans Head Medium';
+  font-weight: 500;
+  font-size: 1.042vw;
+  line-height: 1.2875vw;
+}
+
 .b1 {
   margin: 0px;
   font-family: 'Hyundai Sans Head Regular';
@@ -543,8 +585,11 @@ progress {
 
 @keyframes video_img-open-animation {
   100% {
-    transform: scale(2) translate(80%, -80%);
-    opacity: 0.7;
+    width: 91.66vh;
+    top: 4.17vh;
+    bottom: 4.17vh;
+    left: 4.17vh;
+    right: 4.17vh;
   }
 }
 
@@ -581,5 +626,14 @@ progress {
   }
   to {
     opacity: 0;
+  }
+}
+
+@keyframes video-tmp-img-animation {
+  from {
+    transform: scale(1) translate(0, 0);
+  }
+  to {
+    transform: scale(7.7532493163, 7.1979077384) translate(1.75vw, -3.5vh);
   }
 }

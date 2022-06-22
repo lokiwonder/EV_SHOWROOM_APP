@@ -1,8 +1,6 @@
 import './style.css';
 
-import ReactPlayer from 'react-player';
-
-import { PopupCloseIcon, TempVideo } from '@img';
+import { PopupCloseIcon, ChargingThumb } from '@img';
 import { usePopupStore, useGestureStore, useElectrifiedPageStore, useElectrifiedSelectStore } from '@store';
 import { useEffect, useState } from 'react';
 
@@ -38,10 +36,10 @@ function index(props: Props) {
 
   useEffect(() => {
     setBackgroundAnimation('popup-video-open-animation');
-    setTimeout(() => {
-      setMediaAnimation('popup-media-open');
-      setCloseBtnAnimation('popup-close-btn popup-close-btn-open-animation');
-    }, 400);
+    setMediaAnimation('popup-media-open');
+    setCloseBtnAnimation('popup-close-btn popup-close-btn-open-animation');
+    // setTimeout(() => {
+    // }, 400);
   }, []);
 
   return (
@@ -54,7 +52,7 @@ function index(props: Props) {
           </button>
         </div>
         <div className="popup-tmp-container">
-          <video className={media_animation} controls src={url(selected_electrified, electrified_page.page.video)}></video>
+          <video className={media_animation} poster={ChargingThumb} controls src={url(selected_electrified, electrified_page.page.video)}></video>
         </div>
       </div>
     </div>

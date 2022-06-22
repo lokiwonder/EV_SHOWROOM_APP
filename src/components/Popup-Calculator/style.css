@@ -98,11 +98,21 @@
     margin-bottom: 6.48vh;
 }
 
+.range-label {
+    position: relative;
+    margin: 0 0.625vw;
+}
+
+.range-label .bubble {
+    width: 40.3125vw;
+    position: absolute;
+}
+
 .popup-calculator-contents-range {
     -webkit-appearance: none;
+    margin: 0px;
     width: 40.3125vw;
     height: 0.74vh;
-    margin: 0 0.625vw;
 }
 
 .popup-calculator-contents-range:focus {
@@ -114,8 +124,8 @@
     -webkit-appearance: none;
     background: #002c5f;
     cursor: pointer;
-    width: 3.33vh;  
-    height: 3.33vh; 
+    width: 1.875vw;  
+    height: 1.875vw; 
     border-radius: 50%;
   }
 
