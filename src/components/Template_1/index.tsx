@@ -1,5 +1,6 @@
 import { useElectrifiedSelectStore, useElectrifiedPageStore, usePopupStore, useGestureStore } from '@store';
 import { Popup_Video } from '@components';
+import { PlayIcon } from '@img';
 
 import './style.css';
 import { useEffect, useState } from 'react';
@@ -13,6 +14,7 @@ function Template_1() {
   const { popup, openPopup } = usePopupStore();
 
   // description: 화면 전환 애니메이션 처리를 위한 state //
+  const [background_animation, setBackgroundAnimation] = useState<string>('hidden');
   const [title_animation, setTitleAnimation] = useState<string>('hidden');
   const [comment_animation, setCommentAnimation] = useState<string>('hidden');
   const [img_Animation, setImgAnimation] = useState<string>('hidden');
@@ -28,6 +30,7 @@ function Template_1() {
   // description: 비디오 팝업 처리를 위한 함수
   const onVideoHandler = () => {
     setVideoThumbAnimation('video-thumb-img-open');
+    setBackgroundAnimation('popup-video-open-animation');
     setTimeout(() => {
       openPopup('video');
       checkGesture('');
@@ -71,6 +74,7 @@ function Template_1() {
   // todo: url 컨트롤 //
   return (
     <div className="container">
+      <div className={background_animation}></div>
       <div className="contents-container">
         <div>
           <h2 className={title_animation}>{electrified_page.page.title}</h2>
@@ -89,8 +93,9 @@ function Template_1() {
           {electrified_page.page.video_image && (
             <div className={video_img_animation}>
               <h6 className="primary-blue">How to charge</h6>
-              <button onClick={onVideoHandler}>
+              <button className='video-thumb-btn' onClick={onVideoHandler}>
                 <img className={video_thumb_animation} src={new URL(`/public/assets/images/${selected_electrified}/${electrified_page.page.video_image}`, import.meta.url).href} />
+                <img className="video-thumb-play-btn" src={PlayIcon} />
               </button>
             </div>
           )}

@@ -2,14 +2,14 @@ import './style.css';
 
 import { PopupCloseIcon, ChargingThumb } from '@img';
 import { usePopupStore, useGestureStore, useElectrifiedPageStore, useElectrifiedSelectStore } from '@store';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState, LegacyRef } from 'react';
 
 interface Props {
   video: string;
 }
 
 function index(props: Props) {
-  // const { video } = props;
+  //
   const { selected_electrified } = useElectrifiedSelectStore();
   const { electrified_page } = useElectrifiedPageStore();
   const { checkGesture } = useGestureStore();
@@ -17,6 +17,8 @@ function index(props: Props) {
   const [background_animation, setBackgroundAnimation] = useState<string>('hidden');
   const [media_animation, setMediaAnimation] = useState<string>('hidden');
   const [close_btn_animation, setCloseBtnAnimation] = useState<string>('popup-close-btn hidden');
+
+  const ref = useRef<HTMLVideoElement>(null);
 
   const url = (electrified: string, video: string): string => {
     return new URL(`/public/assets/videos/${electrified}/${video}`, import.meta.url).href;
@@ -31,15 +33,15 @@ function index(props: Props) {
       setMediaAnimation('hidden');
       checkGesture(electrified_page.page_class);
       closePopup();
-    }, 580);
+    }, 1180);
   };
 
   useEffect(() => {
     setBackgroundAnimation('popup-video-open-animation');
     setMediaAnimation('popup-media-open');
     setCloseBtnAnimation('popup-close-btn popup-close-btn-open-animation');
-    // setTimeout(() => {
-    // }, 400);
+
+    ref.current.play();
   }, []);
 
   return (
@@ -52,7 +54,7 @@ function index(props: Props) {
           </button>
         </div>
         <div className="popup-tmp-container">
-          <video className={media_animation} poster={ChargingThumb} controls src={url(selected_electrified, electrified_page.page.video)}></video>
+          <video ref={ref} className={media_animation} poster={ChargingThumb} controls src={url(selected_electrified, electrified_page.page.video)}></video>
         </div>
       </div>
     </div>

@@ -75,6 +75,9 @@
     width: 11.82vw;
     height: 7.16vw;
 
+    position: relative;
+    z-index: 5;
+
     animation: video-tmp-img-animation 0.8s;
 }
 
@@ -136,4 +139,15 @@
 
 .video_img-open-animation {
     animation:  video_img-open-animation 0.8s forwards;
+}
+
+.video-thumb-btn {
+    position: relative;
+}
+
+.video-thumb-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

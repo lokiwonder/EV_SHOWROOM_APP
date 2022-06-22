@@ -13,9 +13,17 @@
     align-items: center;
   }
 
+  .spinner-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .showroom-logo {
-    padding-top: 39.815vh;
-    padding-bottom: 2.778vh;
+    padding-top: 2.777777vh;
+    padding-bottom: 5.5555555vh;
   }
 
   .select-nav-logo {
@@ -38,6 +46,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    margin-bottom: 1.851851vh;
   }
 
   .selector-box {
@@ -128,4 +138,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .spinner-comment {
+    padding-top: 1.851851vh; 
+  }
+
+  .country-select-box {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .counter-select-logo-img {
+    width: 8.8541666vw;
+    height: 8.8541666vw;
   }

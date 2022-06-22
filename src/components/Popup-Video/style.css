@@ -18,7 +18,7 @@
     opacity: 0.7;
     background-color: #000000;
 
-    /* animation: common_popup-open 0.6s; */
+    animation: common_popup-open 0.6s;
 }
 
 .popup-video-close-animation {
@@ -30,7 +30,7 @@
     opacity: 0.7;
     background-color: #000000;
 
-    animation: common_popup-close 0.6s;
+    animation: common_popup-close 1.2s;
 }
 
 .popup-container-open-animation {
@@ -63,7 +63,7 @@
 }
 
 .popup-close-btn-close-animation {
-    animation: video-popup-close-btn-close 0.6s;
+    animation: video-popup-close-btn-close 1.2s;
 }
 
 .popup-tmp-container {
@@ -82,5 +82,6 @@
 
 .popup-media-close {
     display: inline-block;
-    animation: common_popup-close 0.6s;
+    /* animation: common_popup-close 0.6s; */
+    animation: video-popup-close 1.2s ease-in;
 }

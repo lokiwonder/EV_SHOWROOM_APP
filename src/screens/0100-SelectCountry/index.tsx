@@ -1,7 +1,9 @@
-import { HyundaiLogo2, BottomArrowIcon } from '@img';
+import { HyundaiLogo2, BottomArrowIcon, SelectLanguageLogo } from '@img';
 import { useSettingStore } from '@store';
 import { Setting } from '@interface';
+import { SpinnerLottie } from '@lottie';
 import { useState } from 'react';
+import Lottie from 'react-lottie';
 
 import data from '@data';
 import './style.css';
@@ -34,16 +36,33 @@ const Countries: CountrySelector[] = [
 function index() {
   const { setting, setSetting } = useSettingStore();
   const [input_status, setInputStatus] = useState<boolean>(false);
-  const [input_text, setInputText] = useState<string>('b3');
+  const [input_text, setInputText] = useState<string>('b3 active');
 
   const [country, setCountry] = useState<CountrySelector>({ image: '', name: '', continue_string: '' });
+  const [tmp, setTmp] = useState<boolean>(false);
 
   const flag_url = (image: string) => new URL(`/src/assets/images/flags/${image}`, import.meta.url).href;
+
+  const lottie_options = {
+    animationData: SpinnerLottie,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
+  const onBackgroundClickHandler = () => {
+    if (input_status) { 
+      setInputStatus(false);
+      setInputText('b3 active');
+    }
+  }
 
   const onInputHandler = () => {
     if (input_status) {
       setInputStatus(false);
-      setInputText('b3');
+      setInputText('b3 active');
     } else {
       setInputStatus(true);
       setInputText('b3 active');
@@ -57,16 +76,19 @@ function index() {
   };
 
   const onContinueHandler = () => {
-    const setting: Setting = { 
-      app_id: '12341234', 
-      app_version: data.setting.app_version, 
-      app_type: data.setting.app_type, 
-      nation: data.setting.nation, 
-      languages: data.setting.languages, 
-      default_language: data.setting.default_language 
-    }
-    setSetting(setting);
-  }
+    const setting: Setting = {
+      app_id: '12341234',
+      app_version: data.setting.app_version,
+      app_type: data.setting.app_type,
+      nation: data.setting.nation,
+      languages: data.setting.languages,
+      default_language: data.setting.default_language,
+    };
+    setTmp(true);
+    setTimeout(() => {
+      setSetting(setting);
+    }, 5000);
+  };
 
   const SelectBox = () => {
     return (
@@ -86,35 +108,49 @@ function index() {
   };
 
   return (
-    <div className="country-background">
-      <div className="country-container">
-        {!input_status && (
+    <div className="country-background" onClick={onBackgroundClickHandler}>
+      {!tmp ? (
+        <div className="country-container">
           <>
-            <span className="showroom-logo b2 white">EV SHOWROOM</span>
-            <div className="country-selector" onClick={onInputHandler}>
-              {country.name === '' ? (
-                <>
-                  <span className={input_text}>Please select your country</span>
-                  <img className="selectort-arrow" src={BottomArrowIcon} />
-                </>
-              ) : (
-                <>
-                  <div className="selected-countiry">
-                    <img className="flag-image" src={flag_url(country.image)} />
-                    <span className="b3 conuntry-name">{country.name}</span>
-                  </div>
-                  <img className="selectort-arrow" src={BottomArrowIcon} />
-                </>
+            {!input_status && (
+              <div className="country-select-box">
+                <img className="counter-select-logo-img" src={SelectLanguageLogo} />
+                <span className="showroom-logo h2 white">Plaese select your country</span>
+                <div className="country-selector" onClick={onInputHandler}>
+                  {country.name === '' ? (
+                    <>
+                      <span className={input_text}>Select country</span>
+                      <img className="selectort-arrow" src={BottomArrowIcon} />
+                    </>
+                  ) : (
+                    <>
+                      <div className="selected-countiry">
+                        <img className="flag-image" src={flag_url(country.image)} />
+                        <span className="b3 conuntry-name">{country.name}</span>
+                      </div>
+                      <img className="selectort-arrow" src={BottomArrowIcon} />
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+            {input_status && <SelectBox />}
+            <div className="select-country-nav">
+              <img className="select-nav-logo" src={HyundaiLogo2} />
+              {country.name !== '' && (
+                <button onClick={onContinueHandler} className="confirm-button white">
+                  {country.continue_string}
+                </button>
               )}
             </div>
           </>
-        )}
-        {input_status && <SelectBox />}
-        <div className="select-country-nav">
-          <img className="select-nav-logo" src={HyundaiLogo2} />
-          {country.name !== '' && <button onClick={onContinueHandler} className="confirm-button white">{country.continue_string}</button>}
         </div>
-      </div>
+      ) : (
+        <div className="spinner-container">
+          <Lottie style={{ width: '5.20833vw', height: '5.20833vw' }} options={lottie_options} />
+          <p className="b2 white spinner-comment">Updating data...</p>
+        </div>
+      )}
     </div>
   );
 }

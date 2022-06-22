@@ -23,7 +23,7 @@ export default defineConfig({
       preload: {
         input: {
           // You can configure multiple preload scripts here
-          splash: join(__dirname, 'electron/preload/splash.ts'),
+          splash: join(__dirname, 'electron/preload/splash.html'),
         },
         vite: {
           build: {
@@ -43,6 +43,7 @@ export default defineConfig({
       '@asset': resolve(__dirname, './src/assets'),
       '@img': resolve(__dirname, './src/assets/images'),
       '@font': resolve(__dirname, './src/assets/fonts'),
+      '@lottie': resolve(__dirname, './src/assets/lotties'),
       '@components': resolve(__dirname, './src/components'),
       '@config': resolve(__dirname, './src/config'),
       '@data': resolve(__dirname, './src/data/data.json'),

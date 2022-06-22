@@ -22,6 +22,7 @@
       "@asset": ["src/assets"],
       "@img": ["src/assets/images"],
       "@font": ["src/assets/fonts"],
+      "@lottie": ["src/assets/lotties"],
       "@components": ["src/components"],
       "@config": ["src/config"],
       "@data": ["src/data/data.json"],

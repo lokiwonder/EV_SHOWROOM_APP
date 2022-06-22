@@ -22,11 +22,11 @@ const url = `http://${process.env['VITE_DEV_SERVER_HOST']}:${process.env['VITE_D
 
 async function createWindow() {
   win = new BrowserWindow({
-    title: 'EV Showroom',
+    title: 'EV SHOWROOM - Electrified',
     width: 1920,
     height: 1080,
-    frame: false,
-    fullscreen: true,
+    // frame: false,
+    // fullscreen: true,
     webPreferences: {
       // preload: splash,
       nodeIntegration: true,
@@ -73,7 +73,7 @@ async function createWindow() {
 app.whenReady().then(() => 
 {
   const splash = new BrowserWindow({
-    title: 'EV Showroom',
+    title: 'EV SHOWROOM',
     width: 1920,
     height: 1080,
     frame: false,
@@ -92,10 +92,10 @@ app.whenReady().then(() =>
   }
   setTimeout(() => {
     createWindow();
-    // splash.destroy();
-    setTimeout(() => {
-      splash.destroy();
-    }, 2000)
+    splash.destroy();
+    // setTimeout(() => {
+    //   splash.destroy();
+    // }, 2000)
   }, 3000);
 }
   // {

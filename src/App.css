@@ -634,6 +634,15 @@ progress {
     transform: scale(1) translate(0, 0);
   }
   to {
-    transform: scale(7.7532493163, 7.1979077384) translate(1.75vw, -3.5vh);
+    transform: translate(110%, -240%) scale(7.7532493163, 7.1979077384);
+  }
+}
+
+@keyframes video-popup-close {
+  from {
+    transform: scale(1) translate(0, 0);
+  }
+  to {
+    transform: translate(-13.75%, 32.4%) scale(0.128977, 0.138929);
   }
 }
