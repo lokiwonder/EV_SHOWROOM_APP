@@ -18,6 +18,8 @@ const init_setting: Setting = {
   app_version: data.setting.app_version, 
   app_type: data.setting.app_type, 
   nation: data.setting.nation, 
+  electrified_version: data.setting.electrified_version,
+  translation_version: data.setting.translation_version,
   languages: data.setting.languages, 
   default_language: data.setting.default_language 
 }

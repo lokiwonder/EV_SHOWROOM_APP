@@ -55,6 +55,7 @@ export default defineConfig({
       '@store': resolve(__dirname, './src/stores'),
       '@interface': resolve(__dirname, './src/interfaces'),
       '@constant': resolve(__dirname, './src/constants'),
+      '@class': resolve(__dirname, './src/classes'),
     },
   },
 });

@@ -1,4 +1,6 @@
-import { app, BrowserWindow, shell } from 'electron';
+import { app, BrowserWindow, shell, Notification } from 'electron';
+import { autoUpdater } from 'electron-updater';
+import * as log from 'electron-log'
 import { release } from 'os';
 import { join } from 'path';
 
@@ -25,8 +27,9 @@ async function createWindow() {
     title: 'EV SHOWROOM - Electrified',
     width: 1920,
     height: 1080,
-    // frame: false,
-    // fullscreen: true,
+    frame: false,
+    fullscreen: true,
+    icon: join(__dirname, '../resources/icon.png'),
     webPreferences: {
       // preload: splash,
       nodeIntegration: true,
@@ -70,6 +73,28 @@ async function createWindow() {
 
 }
 
+autoUpdater.on('checking-for-update', () => {
+  new Notification({ title: 'Checking for updates', body: 'Please wait...' }).show();
+  log.info('업데이트 확인 중...');
+});
+autoUpdater.on('update-available', (info) => {
+  new Notification({ title: 'Checking for updates', body: 'Please wait...' }).show();
+  log.info('업데이트가 가능합니다.');
+});
+autoUpdater.on('update-not-available', (info) => {
+  log.info('현재 최신버전입니다.');
+});
+autoUpdater.on('error', (err) => {
+  log.info('에러가 발생하였습니다. 에러내용 : ' + err);
+});
+
+autoUpdater.on('update-downloaded', (info) => {
+  autoUpdater.quitAndInstall(false, true);
+        app.relaunch();
+        app.exit();
+});
+
+
 app.whenReady().then(() => 
 {
   const splash = new BrowserWindow({
@@ -96,7 +121,7 @@ app.whenReady().then(() =>
     // setTimeout(() => {
     //   splash.destroy();
     // }, 2000)
-  }, 3000);
+  }, 5000);
 }
   // {
   //   createWindow(false);

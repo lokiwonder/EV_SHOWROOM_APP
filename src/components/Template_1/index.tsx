@@ -34,7 +34,6 @@ function Template_1() {
     setTimeout(() => {
       openPopup('video');
       checkGesture('');
-
       noChange();
     }, 780);
   };
@@ -46,7 +45,7 @@ function Template_1() {
       setImgAnimation('img-container');
       setCommentAnimation('b2 comment');
       setDescriptionAnimation('b4 description');
-      setVideoImgAnimation('hidden');
+      setVideoImgAnimation('vedio_img_container');
     } else if (gesture && change) {
       if (popup === '') {
         setTitleAnimation('title-animation');
@@ -56,7 +55,8 @@ function Template_1() {
           setDescriptionAnimation('b4 description-animation');
         }, 200);
         if (electrified_page.page_present === 0) setTimeout(() => setVideoImgAnimation('vedio_img_container-animation'), 300);
-      } else setVideoImgAnimation('vedio_img_container-animation2');
+        else setVideoImgAnimation('vedio_img_container-animation2');
+      }
     } else {
       setTitleAnimation('title');
       setImgAnimation('img-container');

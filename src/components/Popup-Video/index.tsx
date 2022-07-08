@@ -14,7 +14,7 @@ function index(props: Props) {
   const { electrified_page } = useElectrifiedPageStore();
   const { checkGesture } = useGestureStore();
   const { closePopup } = usePopupStore();
-  const [background_animation, setBackgroundAnimation] = useState<string>('hidden');
+  const [background_animation, setBackgroundAnimation] = useState<string>('popup-video-background');
   const [media_animation, setMediaAnimation] = useState<string>('hidden');
   const [close_btn_animation, setCloseBtnAnimation] = useState<string>('popup-close-btn hidden');
 
@@ -33,11 +33,11 @@ function index(props: Props) {
       setMediaAnimation('hidden');
       checkGesture(electrified_page.page_class);
       closePopup();
-    }, 1180);
+    }, 780);
   };
 
   useEffect(() => {
-    setBackgroundAnimation('popup-video-open-animation');
+    setBackgroundAnimation('popup-video-background');
     setMediaAnimation('popup-media-open');
     setCloseBtnAnimation('popup-close-btn popup-close-btn-open-animation');
 

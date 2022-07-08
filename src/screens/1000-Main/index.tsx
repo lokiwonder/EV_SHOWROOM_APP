@@ -24,7 +24,7 @@ function main() {
 
   const [next, setNext] = useState<boolean>(true);
 
-  // ? 이거 뭐지???
+  // description: 배열
   const i = R.findIndex(R.propEq('electrified_item_name', selected_electrified))(electrifies);
   const electrified = electrifies[i];
 
@@ -36,7 +36,6 @@ function main() {
   //                function                //
   // description: 클릭시 화면 제스쳐
   // const onActionHandler = () => checkGesture(electrified_page.page_class);
-  
 
   // description: 화면을 눌렀을 때 (때지 않음)
   const touchStart = (e: MouseEvent<HTMLDivElement>) => (mouseX = e.clientX);

@@ -33,7 +33,8 @@
       "@popup": ["src/screens/popups"],
       "@store": ["src/stores"],
       "@interface": ["src/interfaces"],
-      "@constant": ["src/constants"]
+      "@constant": ["src/constants"],
+      "@class": ["src/classes"]
     }
   },
   "include": ["src", "types.d.ts"],

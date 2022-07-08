@@ -49,6 +49,12 @@ body {
 .active-red {
   color: #e63312;
 }
+.dark-gray {
+  color: #1C1B1B;
+}
+.deep-gray {
+  color: #7F7F7E
+}
 
 .bg-primary-blue {
   background-color: #002c5f;
@@ -214,8 +220,24 @@ h6 {
   line-height: 0.64375vw;
 }
 
+.b6 {
+  margin: 0px;
+  font-family: 'Hyundai Sans Head Regular';
+  font-weight: 400;
+  font-size: 1.04vw;
+  line-height: 1.2875vw;
+}
+
 .opacity-80 {
   opacity: 0.8;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-60 {
+  opacity: 0.6;
 }
 
 button {

@@ -18,6 +18,8 @@ export interface Setting {
   nation: string;
   languages: string[];
   default_language: string;
+  electrified_version: number,
+  translation_version: number,
 }
 
 export interface Translation {

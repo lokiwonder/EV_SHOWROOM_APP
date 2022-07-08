@@ -15,6 +15,7 @@
 
   .spinner-container {
     height: 100vh;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,11 +73,13 @@
   }
 
   .selector-box>ul>li {
-    padding-left: 1.82vw;
+    /* padding-top: 0.650vw;
+    padding-bottom: 0.650vw; */
     padding-top: 1.302vw;
-    padding-bottom: 1.302vw;
-    display: flex;
-    align-items: center;
+    padding-bottom: 0.650vw;
+    /* display: flex;
+    justify-content: space-between; */
+    /* align-items: center; */
   }
 
   .country-selector > .b3 {
@@ -99,14 +102,20 @@
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
   }
 
+  .conuntry-en-name {
+    opacity: 0.7;
+    padding-left: 1.823vw;
+    /* padding-left: 1.823vw; */
+  }
+
   .conuntry-name {
+    opacity: 0.7;
     padding-left: 1.823vw;
   }
 
-  .selected-countiry {
+  .selected-country {
     display: flex;
-    align-items: center;
-    padding-left: 1.82vw;
+    justify-content: space-between;
   }
 
   .confirm-button {
@@ -140,8 +149,18 @@
     align-items: center;
   }
 
-  .spinner-comment {
-    padding-top: 1.851851vh; 
+  .update-checker {
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.85185185vh;
+  }
+  
+  .spinner-sub-comment {
+    display: flex;
+    flex: 1;
+    padding-left: 0.5208vw;
+    vertical-align: middle;
   }
 
   .country-select-box {

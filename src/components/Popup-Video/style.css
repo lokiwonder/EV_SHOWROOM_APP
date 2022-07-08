@@ -9,7 +9,7 @@
     z-index: 1;
 }
 
-.popup-video-open-animation {
+.popup-video-background {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -18,7 +18,7 @@
     opacity: 0.7;
     background-color: #000000;
 
-    animation: common_popup-open 0.6s;
+    /* animation: common_popup-open 0.8s; */
 }
 
 .popup-video-close-animation {
@@ -83,5 +83,5 @@
 .popup-media-close {
     display: inline-block;
     /* animation: common_popup-close 0.6s; */
-    animation: video-popup-close 1.2s ease-in;
+    animation: video-popup-close 0.8s ease-in;
 }

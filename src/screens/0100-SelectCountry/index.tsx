@@ -2,46 +2,29 @@ import { HyundaiLogo2, BottomArrowIcon, SelectLanguageLogo } from '@img';
 import { useSettingStore } from '@store';
 import { Setting } from '@interface';
 import { SpinnerLottie } from '@lottie';
+import { CountrySelector } from '@class';
+import { COUNTRIES } from '@constant';
 import { useState } from 'react';
 import Lottie from 'react-lottie';
+import Checkmark from 'react-typescript-checkmark';
 
 import data from '@data';
 import './style.css';
-
-class CountrySelector {
-  image: string;
-  name: string;
-  continue_string: string;
-  constructor(image: string, name: string, continue_string: string) {
-    this.image = image;
-    this.name = name;
-    this.continue_string = continue_string;
-  }
-}
-
-const Countries: CountrySelector[] = [
-  new CountrySelector('CZ_Flag.png', 'Česko', 'pokračovat'),
-  new CountrySelector('DE_Flag.png', 'Deutschland', 'fortsetzen'),
-  new CountrySelector('ES_Flag.png', 'España', 'seguir'),
-  new CountrySelector('FR_Flag.png', 'France', 'continuez'),
-  new CountrySelector('IT_Flag.png', 'Italia', 'continua'),
-  new CountrySelector('NL_Flag.png', 'Nederland', 'doorgaan'),
-  new CountrySelector('NO_Flag.png', 'Norge', 'fortsette'),
-  new CountrySelector('PL_Flag.png', 'Polska', 'kontynuować'),
-  new CountrySelector('SK_Flag.png', 'Slovensko', 'ďalej'),
-  new CountrySelector('TR_Flag.png', 'Türkiye', 'devam et'),
-  new CountrySelector('GB_Flag.png', 'United Kingdom', 'continue'),
-];
 
 function index() {
   const { setting, setSetting } = useSettingStore();
   const [input_status, setInputStatus] = useState<boolean>(false);
   const [input_text, setInputText] = useState<string>('b3 active');
 
-  const [country, setCountry] = useState<CountrySelector>({ image: '', name: '', continue_string: '' });
+  const [country, setCountry] = useState<CountrySelector>(new CountrySelector());
   const [tmp, setTmp] = useState<boolean>(false);
 
-  const flag_url = (image: string) => new URL(`/src/assets/images/flags/${image}`, import.meta.url).href;
+  const [update_check, setUpdateCheck] = useState<number>(1);
+  const [update1_check, setUpdate1Check] = useState<boolean>(false);
+  const [update2_check, setUpdate2Check] = useState<boolean>(false);
+  const [update3_check, setUpdate3Check] = useState<boolean>(false);
+
+  // const flag_url = (image: string) => new URL(`/src/assets/images/flags/${image}`, import.meta.url).href;
 
   const lottie_options = {
     animationData: SpinnerLottie,
@@ -53,11 +36,11 @@ function index() {
   };
 
   const onBackgroundClickHandler = () => {
-    if (input_status) { 
+    if (input_status) {
       setInputStatus(false);
       setInputText('b3 active');
     }
-  }
+  };
 
   const onInputHandler = () => {
     if (input_status) {
@@ -83,22 +66,49 @@ function index() {
       nation: data.setting.nation,
       languages: data.setting.languages,
       default_language: data.setting.default_language,
+      electrified_version: 0,
+      translation_version: 0,
     };
+
+    // todo: 영상 제작용 차후 삭제
     setTmp(true);
+    // setTimeout(() => {
+    //   setSetting(setting);
+    // }, 3600000);
+
     setTimeout(() => {
-      setSetting(setting);
-    }, 5000);
+      setUpdate1Check(true);
+      setTimeout(() => {
+        setUpdateCheck(2);
+        setTimeout(() => {
+          setUpdate2Check(true);
+          setTimeout(() => {
+            setUpdateCheck(3);
+            setTimeout(() => {
+              setUpdate3Check(true);
+              setTimeout(() => {
+                setTimeout(() => {
+                  setSetting(setting);
+                }, 1000);
+              }, 1500);
+            }, 4000);
+          }, 1500);
+        }, 4000);
+      }, 1500);
+    }, 4000);
   };
 
+  // component //
+  // description: select box component
   const SelectBox = () => {
     return (
       <div className="selector-box-container">
         <div className="selector-box">
           <ul>
-            {Countries.map((country) => (
+            {COUNTRIES.map((country) => (
               <li key={country.name} onClick={() => onSelectHandler(country)}>
-                <img className="flag-image" src={flag_url(country.image)} />
-                <span className="b3 conuntry-name">{country.name}</span>
+                <p className="b3 conuntry-en-name dark-gray">{country.en_name}</p>
+                <p className="b6 conuntry-name deep-gray">{country.name}</p>
               </li>
             ))}
           </ul>
@@ -106,6 +116,8 @@ function index() {
       </div>
     );
   };
+
+  const UpdateCheckingBox = () => {};
 
   return (
     <div className="country-background" onClick={onBackgroundClickHandler}>
@@ -117,16 +129,15 @@ function index() {
                 <img className="counter-select-logo-img" src={SelectLanguageLogo} />
                 <span className="showroom-logo h2 white">Plaese select your country</span>
                 <div className="country-selector" onClick={onInputHandler}>
-                  {country.name === '' ? (
+                  {!country.name ? (
                     <>
                       <span className={input_text}>Select country</span>
                       <img className="selectort-arrow" src={BottomArrowIcon} />
                     </>
                   ) : (
                     <>
-                      <div className="selected-countiry">
-                        <img className="flag-image" src={flag_url(country.image)} />
-                        <span className="b3 conuntry-name">{country.name}</span>
+                      <div className="selected-country">
+                        <span className="b3 conuntry-en-name dark-gray">{country.en_name}</span>
                       </div>
                       <img className="selectort-arrow" src={BottomArrowIcon} />
                     </>
@@ -137,9 +148,9 @@ function index() {
             {input_status && <SelectBox />}
             <div className="select-country-nav">
               <img className="select-nav-logo" src={HyundaiLogo2} />
-              {country.name !== '' && (
+              {country.name && (
                 <button onClick={onContinueHandler} className="confirm-button white">
-                  {country.continue_string}
+                  Continue
                 </button>
               )}
             </div>
@@ -147,8 +158,32 @@ function index() {
         </div>
       ) : (
         <div className="spinner-container">
-          <Lottie style={{ width: '5.20833vw', height: '5.20833vw' }} options={lottie_options} />
-          <p className="b2 white spinner-comment">Updating data...</p>
+          <div style={{ width: '13.8541vw', height: '16.51vw' }}>
+            <Lottie style={{ width: '5.20833vw', height: '5.20833vw' }} options={lottie_options} />
+            <div>
+              <p className="h5 white spinner-comment">Checking update...</p>
+              <div style={{ marginTop: '1.562499vw' }}>
+                {update_check >= 1 && (
+                  <div className="update-checker">
+                    {!update1_check ? <Lottie style={{ width: '0.625vw', height: '0.625vw', display: 'flex', justifyContent: 'center' }} options={lottie_options} /> : <Checkmark size="xs" checkColor="#002c5f" backgroundColor="white" animationDuration={0.8} explosion={1.2} />}
+                    <p className="b6 white opacity-70 spinner-sub-comment">Asset Update check {`( 1 / 3 )`}</p>
+                  </div>
+                )}
+                {update_check >= 2 && (
+                  <div className="update-checker">
+                    {!update2_check ? <Lottie style={{ width: '0.625vw', height: '0.625vw', display: 'flex', justifyContent: 'center' }} options={lottie_options} /> : <Checkmark size="xs" checkColor="#002c5f" backgroundColor="white" animationDuration={0.8} explosion={1.2} />}
+                    <p className="b6 white opacity-70 spinner-sub-comment">Electrified Update check {`( 2 / 3 )`}</p>
+                  </div>
+                )}
+                {update_check >= 3 && (
+                  <div className="update-checker">
+                    {!update3_check ? <Lottie style={{ width: '0.625vw', height: '0.625vw', display: 'flex', justifyContent: 'center' }} options={lottie_options} /> : <Checkmark size="xs" checkColor="#002c5f" backgroundColor="white" animationDuration={0.8} explosion={1.2} />}
+                    <p className="b6 white opacity-70 spinner-sub-comment">Translation Update check {`( 3 / 3 )`}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>

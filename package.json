@@ -1,5 +1,5 @@
 {
-  "name": "electron_showroom",
+  "name": "EV_SHOWROOM_Electrified",
   "private": true,
   "version": "0.0.0",
   "author": "Wondermove",
@@ -26,6 +26,8 @@
     "axios": "^0.27.2",
     "blob": "^0.1.0",
     "cross-env": "^7.0.3",
+    "electron-log": "^4.4.7",
+    "electron-updater": "^5.0.5",
     "eslint-import-resolver-babel-module": "^5.3.1",
     "eslint-plugin-import": "^2.26.0",
     "file-saver": "^2.0.5",
@@ -35,10 +37,12 @@
     "path": "^0.12.7",
     "ramda": "^0.28.0",
     "react": "^18.0.0",
+    "react-checkmark": "^1.4.0",
     "react-dom": "^18.0.0",
     "react-lottie": "^1.2.3",
     "react-player": "^2.10.1",
     "react-router-dom": "^6.3.0",
+    "react-typescript-checkmark": "^1.2.2",
     "simple-zustand-devtools": "^1.0.1",
     "uuid": "^8.3.2",
     "vite-plugin-electron": "^0.4.8",
@@ -55,14 +59,20 @@
     "typescript": "^4.6.3",
     "vite": "^2.9.9"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lokiwonder/EV_SHOWROOM_TEST.git"
+  },
   "build": {
     "appId": "com.my-website.my-app",
-    "productName": "EV Showroom",
+    "productName": "EV SHOWROOM - Electrified",
     "copyright": "Copyright © 2022 ${author}",
     "mac": {
       "category": "public.app-category.utilities"
     },
     "win": {
+      "verifyUpdateCodeSignature": false,
+      "publisherName": "wondermove",
       "target": [
         "zip",
         "nsis"

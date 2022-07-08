@@ -61,8 +61,7 @@ function main_nav() {
       { language_menu && (
         <div className={language_animation}>
         <div className="language-list">
-          <p className='language-item-active' onClick={onLanguageSelectHandler} >Italino</p>
-          <p className='language-item b3' onClick={onLanguageSelectHandler} >English</p>
+          <p className='language-item-active' onClick={onLanguageSelectHandler} >English</p>
         </div>
       </div>
       ) }

@@ -48,9 +48,9 @@ export default App;
 const personalSetting = async () => {
   if (!data.setting.app_id) {
     await axios({
-      url: 'http://localhost:4000/check/initialize',
+      url: 'http://localhost:4000/apis/electrified/electrifiedInitialize',
       method: 'POST',
-      data: { uuid: uuidv4(), nation: 'it' },
+      data: { app_id: uuidv4(), app_version: 0, country_code: 'IT' },
       responseType: 'arraybuffer',
     }).then((response) => unzip(response?.data));
   }
@@ -68,6 +68,7 @@ const unzip = (data: any) => {
 const decompressionByType = (zip: JSZip) => {
   // description:
   Object.keys(zip.files).forEach(async function (file_name) {
+    console.log(file_name);
     // description: 만약 파일명이 data.json 이면 텍스트 파일로 async, 아니면 버퍼로 async
     const content = file_name === 'data.json' ? await zip.files[file_name].async('string') : await zip.files[file_name].async('nodebuffer');
 
